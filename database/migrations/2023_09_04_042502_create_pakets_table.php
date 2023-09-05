@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('id_Lapangan');
             $table->text('deskripsi');
             $table->integer('jumlah_pemain');
+            $table->integer('harga');
             $table->time('jam_mulai');
             $table->time('jam_selesai');
             $table->timestamps();

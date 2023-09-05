@@ -30,3 +30,9 @@ Route::get('/reservasi', function () {
 Route::get('/tentangkami', function () {
     return view('landing_page/tentangkami');
 });
+
+
+// backend
+Route::resource('lapangan', LapanganController::class);
+Route::resource('pelatih', PelatihController::class);
+Route::resource('berita', BeritaController::class);

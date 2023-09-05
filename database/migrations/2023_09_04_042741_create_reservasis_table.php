@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('no_telp');
             $table->string('no_reservasi')->unique();
             $table->date('tanggal');
+            $table->integer('harga');
             $table->string('email')->unique();
             $table->timestamps();
         });

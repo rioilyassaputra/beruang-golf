@@ -1,0 +1,35 @@
+@extends('admin.layout.main')
+@section('title', 'Lapangan')
+@section('content')
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex">
+                <h4>Tambah Lapangan</h4>
+            </div>
+            <div class="card-body p-0">
+                <form action="{{ Request()->routeIs('lapangan.edit') ? route('lapangan.update', $lapangan->id) : route('lapangan.store') }}"
+                    method="post" enctype="multipart/form-data">
+                    @csrf
+                    @if (Request()->routeIs('lapangan.edit'))
+                        @method('put')
+                    @endif
+                    <div class="form-group mx-3">
+                        <label>gambar</label>
+                        <input type="file" name="gambar" class="form-control" >
+                    </div>
+                    <div class="form-group mx-3">
+                        <label for="" class="form-label">Nama</label>
+                        <input type="text" value="{{ old('nama', $lapangan->nama) }}" class="form-control" name="nama"
+                            id="">
+                    </div>
+                    <div class="form-group mx-3">
+                        <label>Deskripsi</label>
+                        <textarea rows="3" cols="3" name="deskripsi" class="form-control">{{ old('deskripsi', @$lapangan->deskripsi) }}</textarea>
+                    </div>
+                    <button class="btn btn-primary mx-3 mb-3" type="submit">Simpan</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+@endsection
