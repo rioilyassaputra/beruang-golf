@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,20 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//frontend//
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing_page/index');
+});
+Route::get('/berita', function () {
+    return view('landing_page/berita');
+});
+Route::get('/kategori', function () {
+    return view('landing_page/kategori');
+});
+Route::get('/reservasi', function () {
+    return view('landing_page/reservasi');
+});
+Route::get('/tentangkami', function () {
+    return view('landing_page/tentangkami');
 });
