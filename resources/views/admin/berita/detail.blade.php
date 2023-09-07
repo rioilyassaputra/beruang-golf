@@ -7,9 +7,6 @@
                 <h4>Tambah berita</h4>
             </div>
             <div class="card-body p-0">
-                <form action="{{ Request()->routeIs('berita.edit') ? route('berita.update', $beritum->id) : route('berita.store') }}"
-                    method="post" enctype="multipart/form-data">
-                    @csrf
                     @if (Request()->routeIs('berita.edit'))
                         @method('put')
                     @endif
@@ -17,20 +14,15 @@
                         <label>gambar</label>
                         <div class="form-group">
 
-                            {{-- <img class="img-Preview img-fluit mb-3 col-sm-5"> --}}
-                            @if($beritum->gambar)
-                            <img src="{{asset('admin/berita/'. $beritum->gambar)}}" class="img-Preview img-fluit mb-3 col-sm-5">
-                            @else
-                            <img class="img-Preview img-fluit mb-3 col-sm-5">
-                            @endif
-                            <input src="{{asset('admin/'. $beritum->gambar)}}" type="file" id="gambar" class="form-control" name="gambar" onchange="previewImage()">
+                            <img class="img-fluit mb-3 col-sm-5" src="{{ url('/admin/berita/' . @$beritum->gambar) }}">
+
                         </div>
 
                     </div>
                     <div class="form-group mx-3">
                         <label for="" class="form-label">Judul</label>
                         <input type="text" id="judul" value="{{ old('judul', $beritum->judul) }}" class="form-control @error('judul') is-invalid @enderror" name="judul"
-                            id="">
+                            id="" readonly>
                             @error('judul')
                             <div class="alert alert-danger mt-2">
                                 {{ $message }}
@@ -50,39 +42,18 @@
                     </div>
                     <div class="form-group mx-3">
                         <label>Deskripsi</label>
-                        <textarea rows="3" cols="3" name="Deskripsi" class="form-control @error('deskripsi') is-invalid @enderror">{{ old('Deskripsi', @$beritum->Deskripsi) }}</textarea>
+                        <textarea rows="3" cols="3" name="Deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" readonly>{{ old('Deskripsi', @$beritum->Deskripsi) }}</textarea>
                         @error('deskripsi')
                         <div class="alert alert-danger mt-2">
                             {{ $message }}
                         </div>
                     @enderror
                     </div>
-                    <button class="btn btn-primary mx-3 mb-3" type="submit">Simpan</button>
-                </form>
+                    <a class="btn btn-danger mx-3 mb-3" href="{{route('berita.index')}}">Kembali</a>
             </div>
         </div>
     </div>
 
-    <script>
-        const title = document.querySelector("#judul");
-           const slug = document.querySelector("#slug");
 
-           title.addEventListener("keyup", function() {
-               let preslug = title.value;
-               preslug = preslug.replace(/ /g,"-");
-               slug.value = preslug.toLowerCase();
-           });
-
-
-
-       </script>
-{{--
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> --}}
-    <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
-    <script>
-       CKEDITOR.replace( 'Deskripsi' );
-
-    </script>
 
 @endsection

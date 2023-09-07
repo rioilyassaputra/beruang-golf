@@ -14,17 +14,23 @@ class BeritaController extends Controller
         $berita = Berita::all();
         return view('admin.berita.index', compact('berita'));
     }
-    public function create(Berita $berita)
+    public function show(Berita $beritum)
     {
-        return view('admin.berita.create-edit', compact('berita'));
+        return view('admin.berita.detail', compact('beritum'));
+    }
+    public function create(Berita $beritum)
+    {
+        return view('admin.berita.create-edit', compact('beritum'));
     }
     public function store(Request $request)
     {
         $request->validate([
             'judul' => 'required',
             'gambar' => 'required',
+            'slug'     => 'required|unique:beritas',
             'Deskripsi' => 'required',
         ]);
+
         $file = $request->file('gambar');
         $nama_file = time() . "_" . $file->getClientOriginalName();
         $location = 'admin/berita';
@@ -33,6 +39,7 @@ class BeritaController extends Controller
         Berita::create([
             'gambar' => $nama_file,
             'judul' => Str::headline($request->judul),
+            'slug'     => $request->slug,
             'Deskripsi' => Str::headline($request->Deskripsi)
         ]);
 
@@ -40,11 +47,11 @@ class BeritaController extends Controller
 
         return redirect()->route('berita.index')->with('success', 'data berhasil ditambahkan');
     }
-    public function edit(Berita $berita)
+    public function edit(Berita $beritum)
     {
-        return view('admin.berita.create-edit', compact('berita'));
+        return view('admin.berita.create-edit', compact('beritum'));
     }
-    public function update(Request $request, Berita $berita)
+    public function update(Request $request, Berita $beritum)
     {
         if ($request->hasfile('gambar')) {
             $file = $request->file('gambar');
@@ -54,9 +61,10 @@ class BeritaController extends Controller
 
             Storage::delete($location, $nama_file);
 
-            $berita->update([
+            $beritum->update([
                 'gambar' => $nama_file,
                 'judul' => Str::headline($request->nama),
+                'slug'     => $request->slug,
                 'Deskripsi' => Str::headline($request->Deskripsi)
             ]);
 
@@ -66,16 +74,17 @@ class BeritaController extends Controller
             // $berita->$request->Str::headline($request->Deskripsi);
             // $berita->save();
         } else {
-            $berita->update([
+            $beritum->update([
                 'judul' => Str::headline($request->judul),
+                'slug'     => $request->slug,
                 'Deskripsi' => Str::headline($request->Deskripsi)
             ]);
         }
         return redirect()->route('berita.index')->with('success', 'data berhasil diupdate');
     }
-    public function destroy(Berita $berita)
+    public function destroy(Berita $beritum)
     {
-        $berita->delete();
+        $beritum->delete();
         return redirect()->route('berita.index')->with('success', 'data berhasil dihapus');
     }
 }

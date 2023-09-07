@@ -26,6 +26,7 @@
         </div>
     </div>
     @include('admin.layout.footer')
+    @stack('js')
     @include('admin.layout.script')
 </body>
 

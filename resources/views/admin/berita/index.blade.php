@@ -17,7 +17,7 @@
                                     <th>#</th>
                                     <th>Gambar</th>
                                     <th>Judul</th>
-                                    <th>Deskripsi</th>
+                                    {{-- <th>Deskripsi</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -28,15 +28,17 @@
                                             {{ $loop->iteration }}
                                         </td>
                                         <td> <img src="{{ url('/admin/berita/' . @$bt->gambar) }}" width="auto" height="150px" ></td>
-                                        <td>{{ $bt->judul }}</td>
-                                        <td>{{ Str::limit($bt->Deskripsi,50) }}</td>
+                                        <td>{!! $bt->judul !!}</td>
+                                        {{-- <td>{{ Str::limit($bt->Deskripsi,50) }}</td> --}}
                                         <td>
-                                            <form action="{{ route('berita.destroy', $bt->id) }}" method="post">
+                                            <form action="{{ route('berita.destroy', $bt->id) }}"  method="post">
                                                 <a href="{{ route('berita.edit', $bt->id) }}"
                                                     class="btn btn-primary">Edit</a>
+                                                <a href="{{ route('berita.show', $bt->id) }}"
+                                                    class="btn btn-warning">show</a>
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <button type="submit" id="delete" class="btn btn-danger">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

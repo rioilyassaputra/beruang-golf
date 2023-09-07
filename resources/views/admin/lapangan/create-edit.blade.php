@@ -15,7 +15,12 @@
                     @endif
                     <div class="form-group mx-3">
                         <label>gambar</label>
-                        <input type="file" name="gambar" class="form-control" >
+                        @if($lapangan->gambar)
+                        <img src="{{asset('admin/lapangan/'. $lapangan->gambar)}}" class="img-Preview img-fluit mb-3 col-sm-5">
+                        @else
+                        <img class="img-Preview img-fluit mb-3 col-sm-5">
+                        @endif
+                        <input src="{{asset('admin/'. $lapangan->gambar)}}" type="file" id="gambar" class="form-control" name="gambar" onchange="previewImage()">
                     </div>
                     <div class="form-group mx-3">
                         <label for="" class="form-label">Nama</label>

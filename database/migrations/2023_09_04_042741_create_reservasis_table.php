@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->foreignId('id_paket');
             $table->string('nama');
-            $table->integer('no_telp');
+            $table->string('status');
+            $table->bigInteger('no_telp');
             $table->string('no_reservasi')->unique();
             $table->date('tanggal');
             $table->integer('harga');
+            $table->string('bukti_pembayaran')->nullable();
             $table->string('email')->unique();
             $table->timestamps();
         });

@@ -1,13 +1,13 @@
 @extends('admin.layout.main')
-@section('title', 'Pelatih')
+@section('title', 'Paket')
 @section('content')
 
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4>Data pelatih</h4>
-                    <a href="{{ route('pelatih.create') }}" class="btn btn-success ml-auto">+ Tambah</a>
+                    <h4>Data Paket</h4>
+                    <a href="{{ route('paket.create') }}" class="btn btn-success ml-auto">+ Tambah</a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -17,22 +17,28 @@
                                     <th>#</th>
                                     <th>Gambar</th>
                                     <th>Nama</th>
-                                    <th>Deskripsi</th>
+                                    <th>Lapangan</th>
+                                    <th>Jam Mulai</th>
+                                    <th>Jam Selesai</th>
+                                    <th>Harga</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($pelatih as $pl)
+                                @foreach ($paket as $pkt)
                                     <tr>
                                         <td>
                                             {{ $loop->iteration }}
                                         </td>
-                                        <td> <img src="{{ url('/admin/pelatih/' . @$pl->gambar) }}" ></td>
-                                        <td>{{ $pl->nama }}</td>
-                                        <td>{{ $pl->deskripsi }}</td>
+                                        <td> <img src="{{ url('/admin/paket/' . @$pkt->gambar) }}" width="150px" height="150px"></td>
+                                        <td>{{ $pkt->nama }}</td>
+                                        <td>{{ @$pkt->lapangan->nama }}</td>
+                                        <td>{{ \Carbon\Carbon::createFromFormat('H:i:s',$pkt->jam_mulai)->format('h:i') }}</td>
+                                        <td>{{ \Carbon\Carbon::createFromFormat('H:i:s',$pkt->jam_selesai)->format('h:i') }}</td>
+                                        <td>Rp.{{ number_format($pkt->harga,0,',','.') }}</td>
                                         <td>
-                                            <form action="{{ route('pelatih.destroy', $pl->id) }}" method="post">
-                                                <a href="{{ route('pelatih.edit', $pl->id) }}"
+                                            <form action="{{ route('paket.destroy', $pkt->id) }}" method="post">
+                                                <a href="{{ route('paket.edit', $pkt->id) }}"
                                                     class="btn btn-primary">Edit</a>
                                                 @csrf
                                                 @method('delete')

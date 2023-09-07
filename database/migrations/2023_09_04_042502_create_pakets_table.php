@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('gambar');
             $table->string('nama');
-            $table->foreignId('id_Lapangan');
+            $table->foreignId('id_lapangan');
             $table->text('deskripsi');
             $table->integer('jumlah_pemain');
             $table->integer('harga');

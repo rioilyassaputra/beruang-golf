@@ -1,12 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LapanganController;
-use App\Http\Controllers\PelatihController;
-use App\Http\Controllers\BeritaController;
+use App\Models\Berita;
 use App\Models\Pelatih;
 use App\Models\Lapangan;
-use App\Models\Berita;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PaketController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\PelatihController;
+use App\Http\Controllers\LapanganController;
+use App\Http\Controllers\ReservasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +46,7 @@ Route::get('/tentangkami', function () {
 Route::resource('lapangan', LapanganController::class);
 Route::resource('pelatih', PelatihController::class);
 Route::resource('berita', BeritaController::class);
+Route::resource('paket', PaketController::class);
+Route::resource('reservasi', ReservasiController::class);
+
+route::put('/konfirmasi/{reservasi:id}', [ReservasiController::class, 'konfirmasi'])->name('confirm');

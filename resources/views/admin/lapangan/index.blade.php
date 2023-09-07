@@ -36,7 +36,7 @@
                                                     class="btn btn-primary">Edit</a>
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                <button id="delete" type="submit" class="btn btn-danger">Delete</button>
                                             </form>
                                         </td>
                                     </tr>
