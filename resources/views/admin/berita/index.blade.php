@@ -27,9 +27,9 @@
                                         <td>
                                             {{ $loop->iteration }}
                                         </td>
-                                        <td> <img src="{{ url('/admin/berita/' . @$bt->gambar) }}" ></td>
+                                        <td> <img src="{{ url('/admin/berita/' . @$bt->gambar) }}" width="auto" height="150px" ></td>
                                         <td>{{ $bt->judul }}</td>
-                                        <td>{{ $bt->Deskripsi }}</td>
+                                        <td>{{ Str::limit($bt->Deskripsi,50) }}</td>
                                         <td>
                                             <form action="{{ route('berita.destroy', $bt->id) }}" method="post">
                                                 <a href="{{ route('berita.edit', $bt->id) }}"

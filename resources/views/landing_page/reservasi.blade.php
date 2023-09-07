@@ -60,11 +60,11 @@ Author URL: http://w3layouts.com
           style="max-width: 700px"
         >
           <h3 class="title-style">Reservasi</h3>
-          <p class="sub-title mt-2">
+          {{-- <p class="sub-title mt-2">
             Cum doctus civibus efficiantur in imperdiet deterruisset. Cras
             efficitur, metus gravida suscipit cursus, dui diam pre lorem id
             lectus.
-          </p>
+          </p> --}}
         </div>
         <div class="contact-w3pvt-form mt-5 pt-lg-4">
           <form
@@ -75,7 +75,7 @@ Author URL: http://w3layouts.com
             <div class="row main-cont-sec">
               <div class="col-md-6 left-cont-contact">
                 <div class="form-group mb-3">
-                  <label for="w3lName">First Name</label>
+                  <label for="w3lName">Nama</label>
                   <input
                     class="form-control"
                     type="text"
@@ -86,7 +86,7 @@ Author URL: http://w3layouts.com
                   />
                 </div>
                 <div class="form-group mb-3">
-                  <label for="w3lName">Last Name</label>
+                  <label for="w3lName">No tlpn</label>
                   <input
                     class="form-control"
                     type="text"
@@ -110,7 +110,7 @@ Author URL: http://w3layouts.com
               </div>
               <div class="col-md-6 right-cont-contact">
                 <div class="form-group">
-                  <label for="w3lSubject">Write Message</label>
+                  <label for="w3lSubject">Pesan</label>
                   <textarea
                     class="form-control"
                     name="w3lMessage"
@@ -122,14 +122,10 @@ Author URL: http://w3layouts.com
               </div>
             </div>
             <div class="form-group-2 mt-3 text-right">
-              <button type="submit" class="btn btn-style">Send Now</button>
-            </div>
+              <button type="submit" class="btn btn-style">Kirim</button>
+            </div><br>
           </form>
-          <iframe
-            class="map-w3layouts"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6509162.831475898!2d-123.79818215689443!3d37.19305185672543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C+USA!5e0!3m2!1sen!2sin!4v1535716535953"
-            allowfullscreen
-          ></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126926.93493599749!2d106.785304888349!3d-6.201995866825545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f2bdb4c39073%3A0xfc11427db9e1642d!2sRoyale%20Jakarta%20Golf%20Club!5e0!3m2!1sid!2sid!4v1693886128234!5m2!1sid!2sid" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>

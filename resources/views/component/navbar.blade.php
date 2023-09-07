@@ -29,13 +29,13 @@
               <a class="nav-link" href="/">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/tentangkami">Tantang Kami</a>
+              <a class="nav-link" href="/tentangkami">Tentang Kami</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/kategori">Kategori</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/berita">Berita</a>
+              <a class="nav-link" href="/Berita">Berita</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/reservasi">Reservasi</a>

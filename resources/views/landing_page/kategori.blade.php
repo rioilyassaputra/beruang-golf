@@ -62,24 +62,25 @@ Author URL: http://w3layouts.com
           class="title-main text-center mx-auto mb-5 pb-lg-4 pb-2"
           style="max-width: 700px"
         >
-          <h3 class="title-style">Our Services</h3>
-          <p class="sub-title mt-2">
+          <h3 class="title-style">Kategori Paket</h3>
+          {{-- <p class="sub-title mt-2">
             Cum doctus civibus efficiantur in imperdiet deterruisset. Cras
             efficitur, metus gravida suscipit cursus, dui diam pre lorem id
             lectus.
-          </p>
+          </p> --}}
         </div>
         <div class="row text-center mt-5 pt-5">
           <div class="col-lg-4 col-md-6 grids-feature">
             <div class="area-box">
-              <img src="landing_page/assets/images/s1.jpg" alt="" class="img-fluid" />
+              <img src="landing_page/assets/images/golf1.jpg" alt="" class="img-fluid" />
               <h4>
-                <a href="#feature" class="title-head mt-4">Cleaning Services</a>
+                <a href="#feature" class="title-head mt-4">Paket Golf Pemula</a>
               </h4>
               <p class="mt-3">
-                Ligula quam tesque et libero ut justo, ultrices in. Ut eu leo
-                non. Duis sed et dolor amet.
-              </p>
+                Lapangan ini merupakan lapangan tingkat
+                pemula yang panjangnya mencapai antara 2.000 hingga 3.000 yard (sekitar 1.800 hingga 2.700 meter)
+                dengan lubang 9 atau “hole”.
+              </p><br><br>
               <a href="#url" class="more btn btn-style mt-4">Read More </a>
             </div>
           </div>
@@ -87,14 +88,14 @@ Author URL: http://w3layouts.com
             class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-5 pt-md-0 pt-5"
           >
             <div class="area-box mt-md-0 mt-4">
-              <img src="landing_page/assets/images/s2.jpg" alt="" class="img-fluid" />
+              <img src="landing_page/assets/images/golf2.jpg" alt="" class="img-fluid" />
               <h4>
-                <a href="#feature" class="title-head mt-4">Maintenance</a>
+                <a href="#feature" class="title-head mt-4">Paket Golf Mewah</a>
               </h4>
               <p class="mt-3">
-                Ligula quam tesque et libero ut justo, ultrices in. Ut eu leo
-                non. Duis sed et dolor amet.
-              </p>
+                Lapangan ini merupakan lapangan tingkat mewah yang
+                Total jaraknya bisa mencapai 7.000 hingga 8.000 yard (sekitar 6.400 hingga 7.300 meter) atau bahkan lebih panjang dengan 18 lubang atau “hole”.
+              </p><br>
               <a href="#url" class="more btn btn-style mt-4">Read More </a>
             </div>
           </div>
@@ -102,26 +103,26 @@ Author URL: http://w3layouts.com
             class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-5 pt-lg-0 pt-5"
           >
             <div class="area-box mt-lg-0 mt-4">
-              <img src="landing_page/assets/images/s3.jpg" alt="" class="img-fluid" />
+              <img src="landing_page/assets/images/golf4.jpg" alt="" class="img-fluid" />
               <h4>
-                <a href="#feature" class="title-head mt-4">Aquarium Design</a>
+                <a href="#feature" class="title-head mt-4">Paket Golf Liburan</a>
               </h4>
               <p class="mt-3">
-                Ligula quam tesque et libero ut justo, ultrices in. Ut eu leo
-                non. Duis sed et dolor amet.
-              </p>
+                Lapangan ini merupakan lapangan untuk liburan yang
+                Total jaraknya bisa mencapai 7.000 hingga 8.000 yard (sekitar 6.400 hingga 7.300 meter) atau bahkan lebih panjang dengan 18 lubang atau “hole”.
+              </p><br>
               <a href="#url" class="more btn btn-style mt-4">Read More </a>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 grids-feature mt-5 pt-5">
             <div class="area-box mt-4">
-              <img src="landing_page/assets/images/s4.jpg" alt="" class="img-fluid" />
+              <img src="landing_page/assets/images/golf3.jpg" alt="" class="img-fluid" />
               <h4>
-                <a href="#feature" class="title-head mt-4">Aquarium Supply</a>
+                <a href="#feature" class="title-head mt-4">Paket Golf Liburan</a>
               </h4>
               <p class="mt-3">
-                Ligula quam tesque et libero ut justo, ultrices in. Ut eu leo
-                non. Duis sed et dolor amet.
+                Lapangan ini merupakan lapangan untuk liburan yang
+                Total jaraknya bisa mencapai 7.000 hingga 8.000 yard (sekitar 6.400 hingga 7.300 meter) atau bahkan lebih panjang dengan 18 lubang atau “hole”.
               </p>
               <a href="#url" class="more btn btn-style mt-4">Read More </a>
             </div>

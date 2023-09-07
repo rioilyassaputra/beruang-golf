@@ -53,33 +53,71 @@ Author URL: http://w3layouts.com
     <!-- //inner banner -->
 
     <!-- about section -->
-    <section class="w3l-aboutblock py-5">
+
+
+    {{--  --}}
+    {{-- <section class="w3l-aboutblock py-5">
       <div class="container py-md-5 py-sm-4">
         <div class="row">
           <div class="col-lg-6 left-wthree-img mb-lg-0 mb-md-5 mb-4">
             <img
               class="img-fluid img-responsive"
-              src="landing_page/assets/images/golf1.jpg"
+              src="landing_page/assets/images/a4.jpg"
               alt=" "
             />
           </div>
           <div
             class="col-lg-6 about-right-faq align-self position-relative pl-lg-5"
           >
-            {{-- <h6 class="left-text-design">Aquarium</h6> --}}
-            <h3 class="title-style mb-2 pl-4">PT BERUANG EMAS CLUB GOLF</h3>
+            <h6 class="left-text-design">Aquarium</h6>
+            <h3 class="title-style mb-2 pl-4">PT PUNCAK CLUB GOLF</h3>
             <p class="mt-3 pl-4">
-                Komitmen Group Araya untuk terus mengembangkan kawasan kota mandiri hingga 1.000 hektar dibuktikan dengan pengembangan proyek The Araya seluas 150 hektar dengan mempertahankan konsep Golf Residence & Real Estate, sehingga tidaklah berlebihan apabila The Araya selama ini menyandang gelar The Only Golf Residence. Master Plan yang dirancang oleh Peddle Thorp Gillespie dari Brisbane, Australia diyakini mampu memberikan kualitas kawasan yang sangat berkelas. Mengacu pada konsep di atas beberapa fasilitas prestisius pun dibangun untuk memenuhi kebutuhan rekreatif warga The Araya.
+
+                Komitmen Group PUNCAK Golf untuk terus mengembangkan kawasan kota mandiri hingga 1.000 hektar dibuktikan dengan pengembangan proyek The PUNCAK seluas 150 hektar dengan mempertahankan konsep Golf Residence & Real Estate, sehingga tidaklah berlebihan apabila The PUNCAK selama ini menyandang gelar The Only Golf Residence. Master Plan yang dirancang oleh Peddle Thorp Gillespie dari Brisbane, Australia diyakini mampu memberikan kualitas kawasan yang sangat berkelas. Mengacu pada konsep di atas beberapa fasilitas prestisius pun dibangun untuk memenuhi kebutuhan rekreatif warga The PUNCAK.
 
             </p>
+
             <p class="mt-3 pl-4">
-                Salah satu fasilitas yang dikembangkan tersebut adalah Araya Golf & Family Club, yang pengelolaanya dipercayakan kepada PT. Araya Megah Abadi Golf, salah satu anak perusahaan di bawah payung manajemen Araya Group. Perusahaan ini dipercaya untuk mengelola beberapa fasilitas The Araya, antara lain Araya Golf, Family Club, Taman Indie Resto serta Bataputi Coffee House.
+                Salah satu fasilitas yang dikembangkan tersebut adalah PUNCAK Golf & Family Club, yang pengelolaanya dipercayakan kepada PT. PUNCAK Golf, salah satu anak perusahaan di bawah payung manajemen PUNCAK Group. Perusahaan ini dipercaya untuk mengelola beberapa fasilitas The PUNCAK, antara lain PUNCAK Golf, Family Club, Taman Indie Resto serta Bataputi Coffee House.Golf course rancangan designer golf terkemuka J. Michael Poellot ini dikembangkan dengan 2 konsep yang membentuk karakter padang golf yang berbeda. Lake golf course, 9 hole pertama dengan tantangan bermain didominasi bantaran sungai, danau serta sawah. Hill golf course, 9 hole kedua, dibangun ditanah yang berkontur cukup curam diantara bukit dan lembah. Kontur lapangan dipadu dengan creek yang dalam merupakan tantangan bagi para golfer untuk menaklukkannya. Pemandangan spektakuler bukit dan lembah dengan background city view bisa dinikmati sepanjang perjalan permainan golf di hill golf course.
             </p>
+            <section class="clearfix about about-style2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p style="text-align: justify;">  Pada pertengahan tahun 2015, PT. PUNCAK Golf mulai mengoperasikan Driving Range baru, PUNCAK Golf Driving Range. Driving range dengan kapasitas 25 bay ini menggantikan fungsi driving range lama, yang tentu saja dengan berbagai kelebihan di sana-sini. Lengkap dengan penerangan dan target green sampai sejauh 250 meter, faisilitas olahraga ini juga dilengkapi dengan cafe tersendiri, yang akan mendampingi anda setiap kali berlatih.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
           </div>
         </div>
       </div>
+    </section> --}}
+    <section class="w3l-aboutblock py-5">
+        <div class="container py-md-5 py-sm-4">
+            <div class="row">
+                <div class="col-lg-6 left-wthree-img mb-lg-0 mb-md-5 mb-4">
+                    <img class="img-fluid img-responsive" src="landing_page/assets/images/a4.jpg" alt="">
+                </div>
+                <div class="col-lg-6 about-right-faq align-self position-relative pl-lg-5">
+                    <h3 class="title-style mb-2 pl-4">PT PUNCAK CLUB GOLF</h3>
+                    <div class="text-content">
+                        <div class="text-content" style="text-align: justify;">
+                                <div class="newspaper-text">
+                                  Komitmen Group PUNCAK Golf untuk terus mengembangkan kawasan kota mandiri hingga 1.000 hektar dibuktikan dengan pengembangan proyek The PUNCAK seluas 150 hektar dengan mempertahankan konsep Golf Residence & Real Estate, sehingga tidaklah berlebihan apabila The PUNCAK selama ini menyandang gelar The Only Golf Residence. Master Plan yang dirancang oleh Peddle Thorp Gillespie dari Brisbane, Australia diyakini mampu memberikan kualitas kawasan yang sangat berkelas. Mengacu pada konsep di atas beberapa fasilitas prestisius pun dibangun untuk memenuhi kebutuhan rekreatif warga The PUNCAK.
+                            Salah satu fasilitas yang dikembangkan tersebut adalah PUNCAK Golf & Family Club, yang pengelolaanya dipercayakan kepada PT. PUNCAK Golf, salah satu anak perusahaan di bawah payung manajemen PUNCAK Group. Perusahaan ini dipercaya untuk mengelola beberapa fasilitas The PUNCAK, antara lain PUNCAK Golf, Family Club, Taman Indie Resto serta Bataputi Coffee House. Golf course rancangan designer golf terkemuka J. Michael Poellot ini dikembangkan dengan 2 konsep yang membentuk karakter padang golf yang berbeda. Lake golf course, 9 hole pertama dengan tantangan bermain didominasi bantaran sungai, danau serta sawah. Hill golf course, 9 hole kedua, dibangun ditanah yang berkontur cukup curam diantara bukit dan lembah. Kontur lapangan dipadu dengan creek yang dalam merupakan tantangan bagi para golfer untuk menaklukkannya. Pemandangan spektakuler bukit dan lembah dengan background city view bisa dinikmati sepanjang perjalan permainan golf di hill golf course.
+                                Pada pertengahan tahun 2015, PT. PUNCAK Golf mulai mengoperasikan Driving Range baru, PUNCAK Golf Driving Range. Driving range dengan kapasitas 25 bay ini menggantikan fungsi driving range lama, yang tentu saja dengan berbagai kelebihan di sana-sini. Lengkap dengan penerangan dan target green sampai sejauh 250 meter, fasilitas olahraga ini juga dilengkapi dengan cafe tersendiri, yang akan mendampingi anda setiap kali berlatih.
+                                </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- //about section -->
 
@@ -88,7 +126,7 @@ Author URL: http://w3layouts.com
       <div class="team py-5">
         <div class="container py-md-5 py-4">
           <div class="title-main text-center mx-auto" style="max-width: 700px">
-            <h3 class="title-style text-white">TIM PELATIH</h3>
+            <h3 class="title-style text-black">TIM PELATIH</h3>
             {{-- <p class="sub-title-white mt-2">
               Cum doctus civibus efficiantur in imperdiet deterruisset. Cras
               efficitur, metus gravida suscipit cursus, dui diam pre lorem id
@@ -96,18 +134,21 @@ Author URL: http://w3layouts.com
             </p> --}}
           </div>
           <div class="row team-row mt-md-5 mt-4">
+            @foreach ($pelatih as $pl)
+
             <div class="col-lg-3 col-6 team-wrap">
               <div class="team-member text-center">
                 <div class="team-img">
                   <img
-                    src="landing_page/assets/images/p1.jpeg"
-                    alt="" height="350px"
+                    src="{{url('/admin/pelatih/' . @$pl->gambar)}}"
+                    alt="" height="350px" width="200px"
                     class="radius-image"
                   />
-                </div>
-                <h4>
-                  <a href="#url" class="team-title">Dee Zynah</a>
-                </h4>
+                </div><br>
+
+                    <h4 class="title-style text-black">{{$pl->nama}}</h4>
+
+
                 <div class="team-details text-center">
                   <div class="socials mt-20">
                     <a href="#url">
@@ -123,13 +164,15 @@ Author URL: http://w3layouts.com
                 </div>
               </div>
             </div>
+
+            @endforeach
             <!-- end team member -->
-            <div class="col-lg-3 col-6 team-wrap">
+            {{-- <div class="col-lg-3 col-6 team-wrap">
               <div class="team-member text-center">
                 <div class="team-img">
                   <img
-                    src="landing_page/assets/images/team2.jpg"
-                    alt=""
+                    src="landing_page/assets/images/r2.jpg"
+                    alt="" height="350px" width="200px"
                     class="radius-image"
                   />
                 </div>
@@ -156,8 +199,8 @@ Author URL: http://w3layouts.com
               <div class="team-member last text-center">
                 <div class="team-img">
                   <img
-                    src="landing_page/assets/images/team3.jpg"
-                    alt=""
+                    src="landing_page/assets/images/r3.jpg"
+                    alt="" height="350px" width="200px"
                     class="radius-image"
                   />
                 </div>
@@ -184,7 +227,7 @@ Author URL: http://w3layouts.com
               <div class="team-member last text-center">
                 <div class="team-img">
                   <img
-                    src="landing_page/assets/images/team4.jpg"
+                    src="landing_page/assets/images/r4.jpg"
                     alt=""
                     class="radius-image"
                   />
@@ -206,7 +249,7 @@ Author URL: http://w3layouts.com
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
             <!-- end team member -->
           </div>
         </div>

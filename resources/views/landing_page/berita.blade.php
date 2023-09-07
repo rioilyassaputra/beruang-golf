@@ -89,7 +89,7 @@ Author URL: http://w3layouts.com
     <section class="w3l-team-main" id="team">
       <div class="team py-5">
         <div class="container py-md-5 py-4">
-          <div class="title-main text-center mx-auto" style="max-width: 700px">
+          {{-- <div class="title-main text-center mx-auto" style="max-width: 700px">
             <h3 class="title-style text-white">Our Team</h3>
             <p class="sub-title-white mt-2">
               Cum doctus civibus efficiantur in imperdiet deterruisset. Cras
@@ -124,9 +124,49 @@ Author URL: http://w3layouts.com
                   </div>
                 </div>
               </div>
+            </div> --}}
+
+
+            {{-- <div class="header-title mb-9">
+                <h3  class="title-style mb-2 pl-4 style="margin-left: 50%">Artikel</h3>
+            </div> --}}
+            <div class="w3l-homeblog py-5" id="homeblog">
+
+                <div class="container py-lg-5 py-md-4">
+                    <div class="header-title mb-3">
+                        <h3 class="hny-title text-left" style="margin-left: 45%"></h3>
+                    </div>
+                    <div class="row top-pics ">
+                        @foreach($berita as $br)
+                        <div class="col-lg-4 col-md-6 mt-5">
+                            <div class="">
+                                <div class="col">
+                                    <div class="card">
+                                      <img src="{{url('/admin/berita/' . @$br->gambar)}}" class="card-img-top" alt="..."  width="200" height="200">
+                                      <div class="card-body">
+                                        <p class="card-title">{{$br->judul}}</p>
+                                        <center>
+                                            <a href="" class="btn btn-primary btn-style mr-0">view more</a>
+                                        </center>
+                                        {{-- <p class="card-text">{{$d->deskripsi}}</p> --}}
+                                      </div>
+
+                                    </div>
+                                  </div>
+
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
             </div>
+
+
+
+            {{--  --}}
+
             <!-- end team member -->
-            <div class="col-lg-3 col-6 team-wrap">
+            {{-- <div class="col-lg-3 col-6 team-wrap">
               <div class="team-member text-center">
                 <div class="team-img">
                   <img
@@ -152,9 +192,9 @@ Author URL: http://w3layouts.com
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
             <!-- end team member -->
-            <div class="col-lg-3 col-6 team-wrap mt-lg-0 mt-5">
+            {{-- <div class="col-lg-3 col-6 team-wrap mt-lg-0 mt-5">
               <div class="team-member last text-center">
                 <div class="team-img">
                   <img
@@ -180,9 +220,9 @@ Author URL: http://w3layouts.com
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
             <!-- end team member -->
-            <div class="col-lg-3 col-6 team-wrap mt-lg-0 mt-5">
+            {{-- <div class="col-lg-3 col-6 team-wrap mt-lg-0 mt-5">
               <div class="team-member last text-center">
                 <div class="team-img">
                   <img
@@ -208,7 +248,7 @@ Author URL: http://w3layouts.com
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
             <!-- end team member -->
           </div>
         </div>

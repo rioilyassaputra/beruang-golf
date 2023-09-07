@@ -1,7 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LapanganController;
+use App\Http\Controllers\PelatihController;
+use App\Http\Controllers\BeritaController;
+use App\Models\Pelatih;
+use App\Models\Lapangan;
+use App\Models\Berita;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,10 +21,12 @@ use Illuminate\Support\Facades\Route;
 //frontend//
 
 Route::get('/', function () {
-    return view('landing_page/index');
+    $lapangan = Lapangan::latest()->paginate(8);
+    return view('landing_page/index', compact('lapangan'));
 });
-Route::get('/berita', function () {
-    return view('landing_page/berita');
+Route::get('/Berita', function () {
+    $berita =  Berita::latest()->paginate(8);
+    return view('landing_page/Berita', compact('berita'));
 });
 Route::get('/kategori', function () {
     return view('landing_page/kategori');
@@ -28,7 +35,8 @@ Route::get('/reservasi', function () {
     return view('landing_page/reservasi');
 });
 Route::get('/tentangkami', function () {
-    return view('landing_page/tentangkami');
+    $pelatih = Pelatih::latest()->paginate(8);
+    return view('landing_page/tentangkami', compact('pelatih'));
 });
 
 

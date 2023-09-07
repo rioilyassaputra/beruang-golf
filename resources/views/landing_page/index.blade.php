@@ -88,7 +88,7 @@ Author URL: http://w3layouts.com
                     <div style="max-width: 700px" class="">
                       <!-- <h4>Real adventure!</h4> -->
                       <h1 class="slideshow__slide-caption-title mt-2">
-                        Beruang Emas Club Golf
+                         Welcome Beruang Emas Club Golf
                       </h1>
                       <!-- <a class="btn btn-style mt-sm-5 mt-4" href="contact.html">Contact Now</a> -->
                     </div>
@@ -125,7 +125,7 @@ Author URL: http://w3layouts.com
                           <div
                             class="slideshow__slide-image background-absolute"
                             style="
-                              background-image: url('landing_page/assets/images/golf3.jpg');
+                              background-image: url('landing_page/assets/images/a2.jpg');
                             "
                           ></div>
                         </div>
@@ -182,7 +182,7 @@ Author URL: http://w3layouts.com
                           <div
                             class="slideshow__slide-image background-absolute"
                             style="
-                              background-image: url('landing_page/assets/images/golf4.jpg');
+                              background-image: url('landing_page/assets/images/a3.jpg');
                             "
                           ></div>
                         </div>
@@ -271,140 +271,35 @@ Author URL: http://w3layouts.com
     <!-- //banner section -->
 
     <!-- banner bottom section -->
-    <section class="w3l-aboutblock py-5">
-      <div class="container py-md-5 py-sm-4">
-        <div class="row">
-          <div class="col-lg-6 left-wthree-img mb-lg-0 mb-md-5 mb-4">
-            <img
-              class="img-fluid img-responsive"
-              src="landing_page/assets/images/golf2.jpg"
-              alt=" "
-            />
-          </div>
-          <div
-            class="col-lg-6 about-right-faq align-self position-relative pl-lg-5"
-          >
-            <!-- <h6 class="left-text-design">Aquarium</h6> -->
-            <h3 class="title-style mb-2 pl-4">Lapangan A</h3>
-            <p class="mt-3 pl-4">
-              Golf course rancangan designer golf terkemuka lengkap dengan
-              penerangan dan target green sampai sejauh 250 meter akan menjadi
-              tempat berlatih golfer untuk mengasah akurasi pukulannya.
-              Berlokasi di tengah hijaunya hutan Araya, akan memberikan
-              kenyamanan sekaligus konsentrasi lebih dalam berlatih. Struktur
-              bangunan yang semi terbuka, akan melindungi anda dari cuaca panas
-              ataupun hujan .
-            </p>
-            <!-- <p class="mt-3 pl-4">
-              Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Non quae, fugiat.
-            </p> -->
-             {{-- <a class="btn btn-style mt-4 ml-4" href="services.html"
-              >Learn More</a
-            > --}}
-          </div>
-        </div>
-        <div class="row mt-5 pt-lg-4">
-          <div
-            class="col-lg-6 left-wthree-img mb-lg-0 mb-md-5 mb-4 order-lg-last"
-          >
-            <img
-              class="img-fluid img-responsive"
-              src="landing_page/assets/images/golf4.jpg"
-              alt=" "
-            />
-          </div>
-          <div
-            class="col-lg-6 about-right-faq align-self position-relative pl-lg-5 order-lg-first"
-          >
-            <!-- <h6 class="left-text-design">Aquarium</h6> -->
-            <h3 class="title-style mb-2 pl-4">Lapangan B</h3>
-            <p class="mt-3 pl-4">
-              Golf course rancangan designer golf terkemuka lengkap dengan
-              penerangan dan target green sampai sejauh 250 meter akan menjadi
-              tempat berlatih golfer untuk mengasah akurasi pukulannya.
-              Berlokasi di tengah hijaunya hutan Araya, akan memberikan
-              kenyamanan sekaligus konsentrasi lebih dalam berlatih. Struktur
-              bangunan yang semi terbuka, akan melindungi anda dari cuaca panas
-              ataupun hujan .
-            </p>
-            <!-- <p class="mt-3 pl-4">
-              Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Non quae, fugiat.
-            </p> -->
-             {{-- <a class="btn btn-style mt-4 ml-4" href="services.html"
-              >Learn More</a
-            > --}}
-          </div>
-        </div>
-        <br /><br />
-        <br />
-        <div class="row">
-          <div class="col-lg-6 left-wthree-img mb-lg-0 mb-md-5 mb-4">
-            <img
-              class="img-fluid img-responsive"
-              src="landing_page/assets/images/golf3.jpg"
-              alt=" "
-            />
-          </div>
-          <div
-            class="col-lg-6 about-right-faq align-self position-relative pl-lg-5"
-          >
-            <!-- <h6 class="left-text-design"></h6> -->
-            <h3 class="title-style mb-2 pl-4">Lapangan C</h3>
-            <p class="mt-3 pl-4">
-              Golf course rancangan designer golf terkemuka lengkap dengan
-              penerangan dan target green sampai sejauh 250 meter akan menjadi
-              tempat berlatih golfer untuk mengasah akurasi pukulannya.
-              Berlokasi di tengah hijaunya hutan Araya, akan memberikan
-              kenyamanan sekaligus konsentrasi lebih dalam berlatih. Struktur
-              bangunan yang semi terbuka, akan melindungi anda dari cuaca panas
-              ataupun hujan .
-            </p>
-            <!-- <p class="mt-3 pl-4">
-              Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Non quae, fugiat.
-            </p> -->
-            {{-- <a class="btn btn-style mt-4 ml-4" href="services.html"
-              >Learn More</a
-            > --}}
-          </div>
-        </div>
-        <div class="row mt-5 pt-lg-4">
-          <div
-            class="col-lg-6 left-wthree-img mb-lg-0 mb-md-5 mb-4 order-lg-last"
-          >
-            <img
-              class="img-fluid img-responsive"
-              src="landing_page/assets/images/golf5.jpg"
-              alt=" "
-            />
-          </div>
-          <div
-            class="col-lg-6 about-right-faq align-self position-relative pl-lg-5 order-lg-first"
-          >
-            <!-- <h6 class="left-text-design"></h6> -->
-            <h3 class="title-style mb-2 pl-4">Lapangan D</h3>
-            <p class="mt-3 pl-4">
-              Golf course rancangan designer golf terkemuka lengkap dengan
-              penerangan dan target green sampai sejauh 250 meter akan menjadi
-              tempat berlatih golfer untuk mengasah akurasi pukulannya.
-              Berlokasi di tengah hijaunya hutan Araya, akan memberikan
-              kenyamanan sekaligus konsentrasi lebih dalam berlatih. Struktur
-              bangunan yang semi terbuka, akan melindungi anda dari cuaca panas
-              ataupun hujan .
-            </p>
-            <!-- <p class="mt-3 pl-4">
-              Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Non quae, fugiat.
-            </p> -->
-            {{-- <a class="btn btn-style mt-4 ml-4" href="services.html"
-              >Learn More</a
-            > --}}
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="w3l-wecome-content-6">
+		<!-- /content-6-section -->
+		<div class="ab-content-6-mian py-5">
+			<div class="container py-lg-5">
+                @foreach ($lapangan as $lp)
+					<div class="welcome-grids row">
+						<div class="col-lg-6 mb-lg-0 mb-5">
+							<h2 class="hny-title">
+								{{$lp->nama}}
+							</h2>
+							<p class="mb-4"> {{$lp->deskripsi}}</p><br><br>
+						</div>
+						<div class="col-lg-5 welcome-image">
+                            <img
+                            src="{{url('/admin/lapangan/' . @$lp->gambar)}}"
+                            alt="" height="350px" width="600px"
+                            class="radius-image"
+                          /><br><br><br>
+						</div>
+					</div>
+                    @endforeach
+			</div>
+		</div>
+		{{-- </div> --}}
+
+	</section>
+
+
+
     <!-- //banner bottom section -->
 
     <!-- feature section -->
@@ -457,11 +352,11 @@ Author URL: http://w3layouts.com
               <div class="footer17-top-left">
                 <h6>Kontak Kami</h6>
                 <ul>
-                  <li><a href="contact.html"></a></li>
-                  <li><a href="#work">How We Work</a></li>
-                  <li><a href="#aquarium">Aquarium Info</a></li>
-                  <li><a href="#questions">Main Questions</a></li>
-                  <li><a href="#info">Information</a></li>
+                  <li><a href="contact.html">Jl. Raya Halim Tiga, Halim Perdanakusuma Semarang Utara</a></li>
+                  <li><a href="#work">HP/WA: +62811 988 8801 </a></li>
+                  <li><a href="#aquarium">RSVP: +6221 2936 2015</a></li>
+                  <li><a href="#questions">Email: info@BeruangEmas.com</a></li>
+                  <li><a href="#info">www.royalejakarta.com</a></li>
                 </ul>
               </div>
             </div>
