@@ -3,12 +3,14 @@
 use App\Models\Berita;
 use App\Models\Pelatih;
 use App\Models\Lapangan;
+use App\Models\Paket;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PelatihController;
 use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\ReservasiController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,21 +27,41 @@ use App\Http\Controllers\ReservasiController;
 Route::get('/', function () {
     $lapangan = Lapangan::latest()->paginate(8);
     return view('landing_page/index', compact('lapangan'));
-});
+})->name('beranda');
 Route::get('/Berita', function () {
     $berita =  Berita::latest()->paginate(8);
     return view('landing_page/Berita', compact('berita'));
-});
+})->name('Berita');
 Route::get('/kategori', function () {
-    return view('landing_page/kategori');
-});
-Route::get('/reservasi', function () {
-    return view('landing_page/reservasi');
-});
+    $paket = Paket::latest()->paginate(8);
+    return view('landing_page/kategori', compact('paket'));
+})->name('kategori');
+Route::get('/Reservasi', function () {
+    return view('landing_page/Reservasi');
+})->name('Reservasi');
+Route::get('/Paket/detail/{paket}', function (Paket $paket) {
+    return view('landing_page/detailPaket', compact('paket'));
+})->name('kategori.detail');
+Route::get('/Berita/detail/{berita:slug}', function (Berita $berita) {
+    return view('landing_page/detailBerita', compact('berita'));
+})->name('Berita.detail');
 Route::get('/tentangkami', function () {
     $pelatih = Pelatih::latest()->paginate(8);
     return view('landing_page/tentangkami', compact('pelatih'));
+})->name('tentangkami');
+Route::get('/user/login', function () {
+    return view('landing_page/login');
 });
+Route::get('/user/login', function () {
+    return view('landing_page/login');
+});
+Route::get('/user/register', function () {
+    return view('landing_page/register');
+});
+Route::get('/Pelatih/detail/{pelatih}', function (Pelatih $pelatih) {
+    return view('landing_page/detailPelatih', compact('pelatih'));
+})->name('pelatih.detail');
+
 
 
 // backend

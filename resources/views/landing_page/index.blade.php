@@ -25,6 +25,9 @@ Author URL: http://w3layouts.com
       href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <!-- //google-fonts -->
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="landing_page/assets/css/style-starter.css" />
@@ -68,7 +71,7 @@ Author URL: http://w3layouts.com
                           <div
                             class="slideshow__slide-image background-absolute"
                             style="
-                              background-image: url('landing_page/assets/images/golf1.jpg');
+                              background-image: url('landing_page/assets/images/bk1.jpg');
                             "
                           ></div>
                         </div>
@@ -88,7 +91,7 @@ Author URL: http://w3layouts.com
                     <div style="max-width: 700px" class="">
                       <!-- <h4>Real adventure!</h4> -->
                       <h1 class="slideshow__slide-caption-title mt-2">
-                         Welcome Beruang Emas Club Golf
+                         Selamat Datang di Puncak Golf
                       </h1>
                       <!-- <a class="btn btn-style mt-sm-5 mt-4" href="contact.html">Contact Now</a> -->
                     </div>
@@ -145,7 +148,7 @@ Author URL: http://w3layouts.com
                     <div style="max-width: 700px" class="m-auto text-center">
                       <!-- <h4>The best experience!</h4> -->
                       <h1 class="slideshow__slide-caption-title mt-2">
-                        Beruang Emas Club Golf
+                        Isi Waktu Luwangmu Dengan Bermain Golf
                       </h1>
                       <!-- <a class="btn btn-style mt-sm-5 mt-4" href="contact.html">Contact Now</a> -->
                     </div>
@@ -182,7 +185,7 @@ Author URL: http://w3layouts.com
                           <div
                             class="slideshow__slide-image background-absolute"
                             style="
-                              background-image: url('landing_page/assets/images/a3.jpg');
+                              background-image: url('landing_page/assets/images/bk3.jpg');
                             "
                           ></div>
                         </div>
@@ -202,7 +205,7 @@ Author URL: http://w3layouts.com
                     <div style="max-width: 700px" class="ml-auto">
                       <!-- <h4>Underwater zoo!</h4> -->
                       <h1 class="slideshow__slide-caption-title mt-2">
-                        Beruang Emas Club Golf
+                        Bugarkan Dirimu Dengan Golf
                       </h1>
                       <!-- <a class="btn btn-style mt-sm-5 mt-4" href="contact.html">Contact Now</a> -->
                     </div>
@@ -281,7 +284,7 @@ Author URL: http://w3layouts.com
 							<h2 class="hny-title">
 								{{$lp->nama}}
 							</h2>
-							<p class="mb-4"> {{$lp->deskripsi}}</p><br><br>
+							 {!!$lp->deskripsi!!}
 						</div>
 						<div class="col-lg-5 welcome-image">
                             <img
@@ -362,37 +365,43 @@ Author URL: http://w3layouts.com
             </div>
             <div class="col-md-3 col-6">
               <div class="footer17-top-left">
-                <h6>Get To Know Us</h6>
+                <h6>Jam Operasional</h6>
                 <ul>
-                  <li><a href="services.html">Maintenance</a></li>
-                  <li><a href="services.html">Aquarium Design</a></li>
-                  <li><a href="services.html">Cleaning Services</a></li>
-                  <li><a href="services.html">Aquarium Supplies</a></li>
-                  <li><a href="services.html">Health Services</a></li>
+                  <li><a href="">Senin-Rabu: 07:00 – 19:30</a></li>
+                  <li><a href="">Kamis-jumat: 06:30 – 20:00</a></li>
+                  <li><a href="">Sabtu: 06:00 – 20:30</a></li>
+                  <li><a href="">Minggu: 06:00 – 21:00</a></li>
+
                 </ul>
               </div>
             </div>
             <div class="col-md-3 col-6 mt-md-0 mt-4">
               <div class="footer17-top-left">
-                <h6>Ways To Shop</h6>
+                <h6>Header</h6>
                 <ul>
-                  <li><a href="#store">Our Store</a></li>
-                  <li><a href="#cart">Shopping Cart</a></li>
-                  <li><a href="#account">My Account</a></li>
-                  <li><a href="#offers">Our Offers</a></li>
-                  <li><a href="#map">Sitemap</a></li>
+                  <li><a href="/">Beranda</a></li>
+                  <li><a href="/kategori">Kategori</a></li>
+                  <li><a href="/tentangkami">Tentang Kami</a></li>
+                  <li><a href="/Berita">Berita</a></li>
+                  <li><a href="/reservasi">Reservasi</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-md-3 col-6 mt-md-0 mt-4">
               <div class="footer17-top-left border-0">
-                <h6>Legal</h6>
+                <h6>Media Sosial</h6>
                 <ul>
-                  <li><a href="#url">Privacy policy</a></li>
-                  <li><a href="#url">Terms of use</a></li>
-                  <li><a href="#url">FAQ</a></li>
-                  <li><a href="#url">Return Policy</a></li>
-                  <li><a href="#url">Support</a></li>
+                  <li><a href="#url">
+                      <span class="fa fa-facebook-f">PuncakGOLF</span>
+                  </a></li>
+                  <li><a href="#url">
+                      <span class="fa fa-twitter">PuncakGOLF</span>
+                  </a></li>
+                  <li><a href="#url">
+                      <span class="fa fa-instagram">PuncakGOLF</span>
+                  </a></li>
+                  <li><a href="#url"></a></li>
+                  <li><a href="#url"></a></li>
                 </ul>
               </div>
             </div>

@@ -67,7 +67,18 @@
 <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 <script>
    CKEDITOR.replace( 'deskripsi' );
-
+   CKEDITOR.config.autoParagraph = false;
+</script>
+<script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/js/ckeditor/adapters/jquery.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#Deskripsi').ckeditor({
+        toolbar: 'Full',
+        enterMode : CKEDITOR.ENTER_BR,
+        shiftEnterMode: CKEDITOR.ENTER_P
+    });
+});
 </script>
 
 

@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group mx-3">
                         <label>Deskripsi</label>
-                        <textarea rows="3" cols="3" name="Deskripsi" class="form-control @error('deskripsi') is-invalid @enderror">{{ old('Deskripsi', @$beritum->Deskripsi) }}</textarea>
+                        <textarea rows="3" cols="3" id="Deskripsi" name="Deskripsi" class="form-control @error('deskripsi') is-invalid @enderror">{{ old('Deskripsi', @$beritum->Deskripsi) }}</textarea>
                         @error('deskripsi')
                         <div class="alert alert-danger mt-2">
                             {{ $message }}
@@ -80,9 +80,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> --}}
     <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+    <script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/js/ckeditor/adapters/jquery.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#Deskripsi').ckeditor({
+        toolbar: 'Full',
+        enterMode : CKEDITOR.ENTER_BR,
+        shiftEnterMode: CKEDITOR.ENTER_P
+    });
+});
+</script>
     <script>
        CKEDITOR.replace( 'Deskripsi' );
-
+       CKEDITOR.config.autoParagraph = false;
     </script>
 
 @endsection
