@@ -146,7 +146,7 @@ Author URL: http://w3layouts.com
                                       <div class="card-body">
                                         <p class="card-title">{{$br->judul}}</p>
                                         <center>
-                                            <a href="" class="btn btn-primary btn-style mr-0">view more</a>
+                                            <a href="{{route('Berita.detail', $br->slug)}}" class="btn btn-primary btn-style mr-0">view more</a>
                                         </center>
                                         {{-- <p class="card-text">{{$d->deskripsi}}</p> --}}
                                       </div>
@@ -269,70 +269,94 @@ Author URL: http://w3layouts.com
     <!-- //testimonial section -->
 
     <!-- footer -->
+
     <section class="footer-17">
-      <div class="footer17-sub pt-5">
-        <div class="container py-md-5 py-4">
-          <div class="row footer17-top mt-5 pt-md-5 pt-sm-4">
-            <div class="col-md-3 col-6">
-              <div class="footer17-top-left">
-                <h6>Customer Care</h6>
-                <ul>
-                  <li><a href="contact.html">Contact Us</a></li>
-                  <li><a href="#work">How We Work</a></li>
-                  <li><a href="#aquarium">Aquarium Info</a></li>
-                  <li><a href="#questions">Main Questions</a></li>
-                  <li><a href="#info">Information</a></li>
-                </ul>
+        <div class="footer17-sub pt-5">
+          <div class="container py-md-5 py-4">
+            <!-- <div class="text-center mb-4">
+              <a class="footer-logo" href="index.html">Aquarium</a>
+            </div> -->
+            <!-- <form
+              action="#url"
+              method="GET"
+              class="rightside-form m-auto"
+              style="max-width: 500px"
+            >
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                placeholder="Enter your email"
+              />
+              <button class="btn" type="submit">Subscribe</button>
+            </form> -->
+            <div class="row footer17-top mt-5 pt-md-5 pt-sm-4">
+              <div class="col-md-3 col-6">
+                <div class="footer17-top-left">
+                  <h6>Kontak Kami</h6>
+                  <ul>
+                    <li><a href="contact.html">Jl. Raya Halim Tiga, Halim Perdanakusuma Semarang Utara</a></li>
+                    <li><a href="#work">HP/WA: +62811 988 8801 </a></li>
+                    <li><a href="#aquarium">RSVP: +6221 2936 2015</a></li>
+                    <li><a href="#questions">Email: info@BeruangEmas.com</a></li>
+                    <li><a href="#info">www.royalejakarta.com</a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="col-md-3 col-6">
-              <div class="footer17-top-left">
-                <h6>Get To Know Us</h6>
-                <ul>
-                  <li><a href="services.html">Maintenance</a></li>
-                  <li><a href="services.html">Aquarium Design</a></li>
-                  <li><a href="services.html">Cleaning Services</a></li>
-                  <li><a href="services.html">Aquarium Supplies</a></li>
-                  <li><a href="services.html">Health Services</a></li>
-                </ul>
+              <div class="col-md-3 col-6">
+                <div class="footer17-top-left">
+                  <h6>Jam Operasional</h6>
+                  <ul>
+                    <li><a href="">Senin-Rabu: 07:00 – 19:30</a></li>
+                    <li><a href="">Kamis-jumat: 06:30 – 20:00</a></li>
+                    <li><a href="">Sabtu: 06:00 – 20:30</a></li>
+                    <li><a href="">Minggu: 06:00 – 21:00</a></li>
+
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="col-md-3 col-6 mt-md-0 mt-4">
-              <div class="footer17-top-left">
-                <h6>Ways To Shop</h6>
-                <ul>
-                  <li><a href="#store">Our Store</a></li>
-                  <li><a href="#cart">Shopping Cart</a></li>
-                  <li><a href="#account">My Account</a></li>
-                  <li><a href="#offers">Our Offers</a></li>
-                  <li><a href="#map">Sitemap</a></li>
-                </ul>
+              <div class="col-md-3 col-6 mt-md-0 mt-4">
+                <div class="footer17-top-left">
+                  <h6>Header</h6>
+                  <ul>
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="/kategori">Kategori</a></li>
+                    <li><a href="/tentangkami">Tentang Kami</a></li>
+                    <li><a href="/Berita">Berita</a></li>
+                    <li><a href="/reservasi">Reservasi</a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="col-md-3 col-6 mt-md-0 mt-4">
-              <div class="footer17-top-left border-0">
-                <h6>Legal</h6>
-                <ul>
-                  <li><a href="#url">Privacy policy</a></li>
-                  <li><a href="#url">Terms of use</a></li>
-                  <li><a href="#url">FAQ</a></li>
-                  <li><a href="#url">Return Policy</a></li>
-                  <li><a href="#url">Support</a></li>
-                </ul>
+              <div class="col-md-3 col-6 mt-md-0 mt-4">
+                <div class="footer17-top-left border-0">
+                  <h6>Media Sosial</h6>
+                  <ul>
+                    <li><a href="#url">
+                        <span class="fa fa-facebook-f">PuncakGOLF</span>
+                    </a></li>
+                    <li><a href="#url">
+                        <span class="fa fa-twitter">PuncakGOLF</span>
+                    </a></li>
+                    <li><a href="#url">
+                        <span class="fa fa-instagram">PuncakGOLF</span>
+                    </a></li>
+                    <li><a href="#url"></a></li>
+                    <li><a href="#url"></a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
+          {{-- <div class="copyright text-center">
+            <div class="container">
+              <p class="copy-footer-29">
+                © 2021 Aquarium. All rights reserved | Designed by
+                <a href="https://w3layouts.com" target="_blank">W3layouts</a>
+              </p>
+            </div>
+          </div> --}}
         </div>
-        {{-- <div class="copyright text-center">
-          <div class="container">
-            <p class="copy-footer-29">
-              © 2021 Aquarium. All rights reserved | Designed by
-              <a href="https://w3layouts.com" target="_blank">W3layouts</a>
-            </p>
-          </div>
-        </div> --}}
-      </div>
-    </section>
+      </section>
     <!-- //footer -->
 
     <!-- Js scripts -->

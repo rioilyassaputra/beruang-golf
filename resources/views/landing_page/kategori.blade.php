@@ -52,107 +52,86 @@ Author URL: http://w3layouts.com
           </ul>
         </div>
       </div>
-    </div>
+    </div><br><br>
     <!-- //inner banner -->
 
     <!-- services section -->
-    <section class="w3l-services-6 py-5">
-      <div class="container py-md-5 py-4">
+<div class="w3l-grids-block-5 pb-5">
+        <div class="container">
+            <div class="title-main text-center mx-auto mb-4" style="max-width:700px;">
+                <h3 class="title-style">Pilih Paket Golf yang Kamu</h3>
+                <p class="sub-title mt-2">Pilih paket yang kamu inginkan dan nikmati suasana olahraga bersama teman dan keluarga.</p>
+            </div>
+            <div class="row mt-sm-5 pt-lg-2 justify-content-center">
+                @foreach ($paket as $pkt)
+
+                <div class="col-lg-4 col-sm-6  mt-lg-0 mt-4">
+                    <div class=" grids5-info">
+
+                        <a href="#blog">  <img
+                            src="{{url('/admin/paket/' . @$pkt->gambar)}}"
+                            alt="" height="300px" width="250px"
+                            class="radius-image"
+                          /></a>
+                        <div class="blog-info">
+                            <h5>Feb 20, 2021</h5>
+                            <h4><a href="#blog">{{$pkt->nama}}</a></h4>
+                            {!!str_replace("&Amp;Nbsp;", " ",  Str::limit($pkt->deskripsi,51)) !!} <br>
+                            <a class="btn btn-style mt-4" href="{{route('kategori.detail', $pkt->id)}}">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    {{-- <section class="w3l-services-6 py-5"> --}}
+      {{-- <div class="container py-md-5 py-4">
+        @foreach ($paket as $pk)
         <div
           class="title-main text-center mx-auto mb-5 pb-lg-4 pb-2"
           style="max-width: 700px"
         >
           <h3 class="title-style">Kategori Paket</h3>
-          {{-- <p class="sub-title mt-2">
-            Cum doctus civibus efficiantur in imperdiet deterruisset. Cras
-            efficitur, metus gravida suscipit cursus, dui diam pre lorem id
-            lectus.
-          </p> --}}
         </div>
         <div class="row text-center mt-5 pt-5">
           <div class="col-lg-4 col-md-6 grids-feature">
             <div class="area-box">
-              <img src="landing_page/assets/images/golf1.jpg" alt="" class="img-fluid" />
+                <img
+                src="{{url('/admin/paket/' . @$pk->gambar)}}"
+                alt="" height="150px" width="300px"
+                class="radius-image"
+              />
               <h4>
-                <a href="#feature" class="title-head mt-4">Paket Golf Pemula</a>
+                <a href="#feature" class="title-head mt-4">{{$pk->nama}}</a>
               </h4>
-              <p class="mt-3">
-                Lapangan ini merupakan lapangan tingkat
-                pemula yang panjangnya mencapai antara 2.000 hingga 3.000 yard (sekitar 1.800 hingga 2.700 meter)
-                dengan lubang 9 atau “hole”.
-              </p><br><br>
-              <a href="#url" class="more btn btn-style mt-4">Read More </a>
+              <b class="mt-3">Lapangan</b>
+              <p >
+                {{$pk->lapangan->nama}} <br>
+                <p >
+                    <b>Jumlah Pemain</b><br>
+                    {{$pk->jumlah_pemain}}<br>
+                </p>
+                <b class="mt-3">Deskripsi Paket</b>
+            </p>
+             {!!str_replace("&Amp;Nbsp;", " ", $pk->deskripsi)!!} <br>
+
+                <b>jam oprasional</b><br>
+                <p>
+
+                    {{\Carbon\Carbon::createFromFormat('H:i:s',$pk->jam_mulai)->format('h:i')}} -
+                    {{\Carbon\Carbon::createFromFormat('H:i:s',$pk->jam_selesai)->format('h:i')}}
+                </p>
+                <b>Harga</b><br>
+                   Rp.{{number_format($pk->harga,0,',','.')}} <br>
+                <br> --}}
+
+
+              {{-- </p><br><br> --}}
+              {{-- <a href="#url" class="more btn btn-style mt-4">Read More </a>
             </div>
           </div>
-          <div
-            class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-5 pt-md-0 pt-5"
-          >
-            <div class="area-box mt-md-0 mt-4">
-              <img src="landing_page/assets/images/golf2.jpg" alt="" class="img-fluid" />
-              <h4>
-                <a href="#feature" class="title-head mt-4">Paket Golf Mewah</a>
-              </h4>
-              <p class="mt-3">
-                Lapangan ini merupakan lapangan tingkat mewah yang
-                Total jaraknya bisa mencapai 7.000 hingga 8.000 yard (sekitar 6.400 hingga 7.300 meter) atau bahkan lebih panjang dengan 18 lubang atau “hole”.
-              </p><br>
-              <a href="#url" class="more btn btn-style mt-4">Read More </a>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-md-6 grids-feature mt-lg-0 mt-5 pt-lg-0 pt-5"
-          >
-            <div class="area-box mt-lg-0 mt-4">
-              <img src="landing_page/assets/images/golf4.jpg" alt="" class="img-fluid" />
-              <h4>
-                <a href="#feature" class="title-head mt-4">Paket Golf Liburan</a>
-              </h4>
-              <p class="mt-3">
-                Lapangan ini merupakan lapangan untuk liburan yang
-                Total jaraknya bisa mencapai 7.000 hingga 8.000 yard (sekitar 6.400 hingga 7.300 meter) atau bahkan lebih panjang dengan 18 lubang atau “hole”.
-              </p><br>
-              <a href="#url" class="more btn btn-style mt-4">Read More </a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 grids-feature mt-5 pt-5">
-            <div class="area-box mt-4">
-              <img src="landing_page/assets/images/golf3.jpg" alt="" class="img-fluid" />
-              <h4>
-                <a href="#feature" class="title-head mt-4">Paket Golf Liburan</a>
-              </h4>
-              <p class="mt-3">
-                Lapangan ini merupakan lapangan untuk liburan yang
-                Total jaraknya bisa mencapai 7.000 hingga 8.000 yard (sekitar 6.400 hingga 7.300 meter) atau bahkan lebih panjang dengan 18 lubang atau “hole”.
-              </p>
-              <a href="#url" class="more btn btn-style mt-4">Read More </a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 grids-feature mt-5 pt-5">
-            <div class="area-box mt-4">
-              <img src="landing_page/assets/images/s5.jpg" alt="" class="img-fluid" />
-              <h4>
-                <a href="#feature" class="title-head mt-4">Health Services</a>
-              </h4>
-              <p class="mt-3">
-                Ligula quam tesque et libero ut justo, ultrices in. Ut eu leo
-                non. Duis sed et dolor amet.
-              </p>
-              <a href="#url" class="more btn btn-style mt-4">Read More </a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 grids-feature mt-5 pt-5">
-            <div class="area-box mt-4">
-              <img src="landing_page/assets/images/s6.jpg" alt="" class="img-fluid" />
-              <h4>
-                <a href="#feature" class="title-head mt-4">Consultation</a>
-              </h4>
-              <p class="mt-3">
-                Ligula quam tesque et libero ut justo, ultrices in. Ut eu leo
-                non. Duis sed et dolor amet.
-              </p>
-              <a href="#url" class="more btn btn-style mt-4">Read More </a>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </section>
@@ -160,70 +139,182 @@ Author URL: http://w3layouts.com
 
     <!-- footer -->
     <section class="footer-17">
-      <div class="footer17-sub pt-5">
-        <div class="container py-md-5 py-4">
-          <div class="row footer17-top mt-5 pt-md-5 pt-sm-4">
-            <div class="col-md-3 col-6">
-              <div class="footer17-top-left">
-                <h6>Customer Care</h6>
-                <ul>
-                  <li><a href="contact.html">Contact Us</a></li>
-                  <li><a href="#work">How We Work</a></li>
-                  <li><a href="#aquarium">Aquarium Info</a></li>
-                  <li><a href="#questions">Main Questions</a></li>
-                  <li><a href="#info">Information</a></li>
-                </ul>
+        <div class="footer17-sub pt-5">
+          <div class="container py-md-5 py-4">
+            <!-- <div class="text-center mb-4">
+              <a class="footer-logo" href="index.html">Aquarium</a>
+            </div> -->
+            <!-- <form
+              action="#url"
+              method="GET"
+              class="rightside-form m-auto"
+              style="max-width: 500px"
+            >
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                placeholder="Enter your email"
+              />
+              <button class="btn" type="submit">Subscribe</button>
+            </form> -->
+            <div class="row footer17-top mt-5 pt-md-5 pt-sm-4">
+              <div class="col-md-3 col-6">
+                <div class="footer17-top-left">
+                  <h6>Kontak Kami</h6>
+                  <ul>
+                    <li><a href="contact.html">Jl. Raya Halim Tiga, Halim Perdanakusuma Semarang Utara</a></li>
+                    <li><a href="#work">HP/WA: +62811 988 8801 </a></li>
+                    <li><a href="#aquarium">RSVP: +6221 2936 2015</a></li>
+                    <li><a href="#questions">Email: info@BeruangEmas.com</a></li>
+                    <li><a href="#info">www.royalejakarta.com</a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="col-md-3 col-6">
-              <div class="footer17-top-left">
-                <h6>Get To Know Us</h6>
-                <ul>
-                  <li><a href="services.html">Maintenance</a></li>
-                  <li><a href="services.html">Aquarium Design</a></li>
-                  <li><a href="services.html">Cleaning Services</a></li>
-                  <li><a href="services.html">Aquarium Supplies</a></li>
-                  <li><a href="services.html">Health Services</a></li>
-                </ul>
+              <div class="col-md-3 col-6">
+                <div class="footer17-top-left">
+                  <h6>Jam Operasional</h6>
+                  <ul>
+                    <li><a href="">Mon-Wed: 6:00am – 8:00pm</a></li>
+                    <li><a href="">Thurs-Fri: 6:30am – 7:30pm</a></li>
+                    <li><a href="">Sat: 7:00am – 9:00pm</a></li>
+                    <li><a href="">Sun: 8:00am – 8:00pm</a></li>
+
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="col-md-3 col-6 mt-md-0 mt-4">
-              <div class="footer17-top-left">
-                <h6>Ways To Shop</h6>
-                <ul>
-                  <li><a href="#store">Our Store</a></li>
-                  <li><a href="#cart">Shopping Cart</a></li>
-                  <li><a href="#account">My Account</a></li>
-                  <li><a href="#offers">Our Offers</a></li>
-                  <li><a href="#map">Sitemap</a></li>
-                </ul>
+              <div class="col-md-3 col-6 mt-md-0 mt-4">
+                <div class="footer17-top-left">
+                  <h6>Header</h6>
+                  <ul>
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="/kategori">Kategori</a></li>
+                    <li><a href="/tentangkami">Tentang Kami</a></li>
+                    <li><a href="/Berita">Berita</a></li>
+                    <li><a href="/reservasi">Reservasi</a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="col-md-3 col-6 mt-md-0 mt-4">
-              <div class="footer17-top-left border-0">
-                <h6>Legal</h6>
-                <ul>
-                  <li><a href="#url">Privacy policy</a></li>
-                  <li><a href="#url">Terms of use</a></li>
-                  <li><a href="#url">FAQ</a></li>
-                  <li><a href="#url">Return Policy</a></li>
-                  <li><a href="#url">Support</a></li>
-                </ul>
+              <div class="col-md-3 col-6 mt-md-0 mt-4">
+                <div class="footer17-top-left border-0">
+                    <h6>Media Sosial</h6>
+                    <ul>
+                      <li><a href="#url">
+                          <span class="fa fa-facebook-f"></span>
+                      </a></li>
+                      <li><a href="#url">
+                          <span class="fa fa-twitter"></span>
+                      </a></li>
+                      <li><a href="#url">
+                          <span class="fa fa-instagram"></span>
+                      </a></li>
+                      <li><a href="#url"></a></li>
+                      <li><a href="#url"></a></li>
+                    </ul>
+                </div>
               </div>
             </div>
           </div>
+          {{-- <div class="copyright text-center">
+            <div class="container">
+              <p class="copy-footer-29">
+                © 2021 Aquarium. All rights reserved | Designed by
+                <a href="https://w3layouts.com" target="_blank">W3layouts</a>
+              </p>
+            </div>
+          </div> --}}
         </div>
-        {{-- <div class="copyright text-center">
-          <div class="container">
-            <p class="copy-footer-29">
-              © 2021 Aquarium. All rights reserved | Designed by
-              <a href="https://w3layouts.com" target="_blank">W3layouts</a>
-            </p>
-          </div>
-        </div> --}}
-      </div>
-    </section>
+      </section>
     <!-- //footer -->
+
+
+    <section class="footer-17">
+        <div class="footer17-sub pt-5">
+          <div class="container py-md-5 py-4">
+            <!-- <div class="text-center mb-4">
+              <a class="footer-logo" href="index.html">Aquarium</a>
+            </div> -->
+            <!-- <form
+              action="#url"
+              method="GET"
+              class="rightside-form m-auto"
+              style="max-width: 500px"
+            >
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                placeholder="Enter your email"
+              />
+              <button class="btn" type="submit">Subscribe</button>
+            </form> -->
+            <div class="row footer17-top mt-5 pt-md-5 pt-sm-4">
+              <div class="col-md-3 col-6">
+                <div class="footer17-top-left">
+                  <h6>Kontak Kami</h6>
+                  <ul>
+                    <li><a href="contact.html">Jl. Raya Halim Tiga, Halim Perdanakusuma Semarang Utara</a></li>
+                    <li><a href="#work">HP/WA: +62811 988 8801 </a></li>
+                    <li><a href="#aquarium">RSVP: +6221 2936 2015</a></li>
+                    <li><a href="#questions">Email: info@BeruangEmas.com</a></li>
+                    <li><a href="#info">www.royalejakarta.com</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="footer17-top-left">
+                  <h6>Jam Operasional</h6>
+                  <ul>
+                    <li><a href="">Senin-Rabu: 07:00 – 19:30</a></li>
+                    <li><a href="">Kamis-jumat: 06:30 – 20:00</a></li>
+                    <li><a href="">Sabtu: 06:00 – 20:30</a></li>
+                    <li><a href="">Minggu: 06:00 – 21:00</a></li>
+
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mt-md-0 mt-4">
+                <div class="footer17-top-left">
+                  <h6>Header</h6>
+                  <ul>
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="/kategori">Kategori</a></li>
+                    <li><a href="/tentangkami">Tentang Kami</a></li>
+                    <li><a href="/Berita">Berita</a></li>
+                    <li><a href="/reservasi">Reservasi</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mt-md-0 mt-4">
+                <div class="footer17-top-left border-0">
+                  <h6>Media Sosial</h6>
+                  <ul>
+                    <li><a href="#url">
+                        <span class="fa fa-facebook-f">PuncakGOLF</span>
+                    </a></li>
+                    <li><a href="#url">
+                        <span class="fa fa-twitter">PuncakGOLF</span>
+                    </a></li>
+                    <li><a href="#url">
+                        <span class="fa fa-instagram">PuncakGOLF</span>
+                    </a></li>
+                    <li><a href="#url"></a></li>
+                    <li><a href="#url"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{-- <div class="copyright text-center">
+            <div class="container">
+              <p class="copy-footer-29">
+                © 2021 Aquarium. All rights reserved | Designed by
+                <a href="https://w3layouts.com" target="_blank">W3layouts</a>
+              </p>
+            </div>
+          </div> --}}
+        </div>
+      </section>
 
     <!-- Js scripts -->
     <!-- move top -->

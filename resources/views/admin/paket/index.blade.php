@@ -33,8 +33,8 @@
                                         <td> <img src="{{ url('/admin/paket/' . @$pkt->gambar) }}" width="150px" height="150px"></td>
                                         <td>{{ $pkt->nama }}</td>
                                         <td>{{ @$pkt->lapangan->nama }}</td>
-                                        <td>{{ \Carbon\Carbon::createFromFormat('H:i:s',$pkt->jam_mulai)->format('h:i') }}</td>
-                                        <td>{{ \Carbon\Carbon::createFromFormat('H:i:s',$pkt->jam_selesai)->format('h:i') }}</td>
+                                        <td>{{ \Carbon\Carbon::createFromFormat('H:i:s',$pkt->jam_mulai)->format('h:i A') }}</td>
+                                        <td>{{ \Carbon\Carbon::createFromFormat('H:i:s',$pkt->jam_selesai)->format('h:i A') }}</td>
                                         <td>Rp.{{ number_format($pkt->harga,0,',','.') }}</td>
                                         <td>
                                             <form action="{{ route('paket.destroy', $pkt->id) }}" method="post">

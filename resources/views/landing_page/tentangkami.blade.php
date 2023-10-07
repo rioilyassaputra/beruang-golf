@@ -122,139 +122,46 @@ Author URL: http://w3layouts.com
     <!-- //about section -->
 
     <!-- team section -->
-    <section class="w3l-team-main" id="team">
-      <div class="team py-5">
+
+    <section class="w3l-services-6 py-5">
         <div class="container py-md-5 py-4">
-          <div class="title-main text-center mx-auto" style="max-width: 700px">
-            <h3 class="title-style text-black">TIM PELATIH</h3>
-            {{-- <p class="sub-title-white mt-2">
-              Cum doctus civibus efficiantur in imperdiet deterruisset. Cras
-              efficitur, metus gravida suscipit cursus, dui diam pre lorem id
-              lectus.
-            </p> --}}
+          <div
+            class="title-main text-center mx-auto mb-5 pb-lg-4 pb-2"
+            style="max-width: 700px"
+          >
+            <h3 class="title-style">TIM PELATIH</h3>
           </div>
-          <div class="row team-row mt-md-5 mt-4">
+          <div class="row text-center pt-5">
             @foreach ($pelatih as $pl)
-
-            <div class="col-lg-3 col-6 team-wrap">
-              <div class="team-member text-center">
-                <div class="team-img">
-                  <img
+            <div class="col-lg-4 col-md-6 grids-feature">
+              <div class="area-box mt-5 mb-5 shadow">
+                <img
                     src="{{url('/admin/pelatih/' . @$pl->gambar)}}"
-                    alt="" height="350px" width="200px"
+                    alt="" height="150px" width="150px"
                     class="radius-image"
-                  />
-                </div><br>
-
-                    <h4 class="title-style text-black">{{$pl->nama}}</h4>
-
-
-                <div class="team-details text-center">
-                  <div class="socials mt-20">
-                    <a href="#url">
-                      <span class="fa fa-facebook-f"></span>
-                    </a>
-                    <a href="#url">
-                      <span class="fa fa-twitter"></span>
-                    </a>
-                    <a href="#url">
-                      <span class="fa fa-instagram"></span>
-                    </a>
-                  </div>
-                </div>
+                  /><br><br>
+                <h4>
+                  <a href="#feature" class="title-head mt-4">{{$pl->nama}}</a>
+                </h4>
+                {!!str_replace("&Amp;Nbsp;", " ",  Str::limit($pl->deskripsi,51)) !!} <br>
+                <a class="btn btn-style mt-4" href="{{route('pelatih.detail', $pl->id)}}">Read More</a>
               </div>
             </div>
-
             @endforeach
-            <!-- end team member -->
-            {{-- <div class="col-lg-3 col-6 team-wrap">
-              <div class="team-member text-center">
-                <div class="team-img">
-                  <img
-                    src="landing_page/assets/images/r2.jpg"
-                    alt="" height="350px" width="200px"
-                    class="radius-image"
-                  />
-                </div>
-                <h4>
-                  <a href="#url" class="team-title">Meyer Lson</a>
-                </h4>
-                <div class="team-details text-center">
-                  <div class="socials mt-20">
-                    <a href="#url">
-                      <span class="fa fa-facebook-f"></span>
-                    </a>
-                    <a href="#url">
-                      <span class="fa fa-twitter"></span>
-                    </a>
-                    <a href="#url">
-                      <span class="fa fa-instagram"></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end team member -->
-            <div class="col-lg-3 col-6 team-wrap mt-lg-0 mt-5">
-              <div class="team-member last text-center">
-                <div class="team-img">
-                  <img
-                    src="landing_page/assets/images/r3.jpg"
-                    alt="" height="350px" width="200px"
-                    class="radius-image"
-                  />
-                </div>
-                <h4>
-                  <a href="#url" class="team-title">Lyn Meyer</a>
-                </h4>
-                <div class="team-details text-center">
-                  <div class="socials mt-20">
-                    <a href="#url">
-                      <span class="fa fa-facebook-f"></span>
-                    </a>
-                    <a href="#url">
-                      <span class="fa fa-twitter"></span>
-                    </a>
-                    <a href="#url">
-                      <span class="fa fa-instagram"></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- end team member -->
-            <div class="col-lg-3 col-6 team-wrap mt-lg-0 mt-5">
-              <div class="team-member last text-center">
-                <div class="team-img">
-                  <img
-                    src="landing_page/assets/images/r4.jpg"
-                    alt=""
-                    class="radius-image"
-                  />
-                </div>
-                <h4>
-                  <a href="#url" class="team-title">Sam Mills</a>
-                </h4>
-                <div class="team-details text-center">
-                  <div class="socials mt-20">
-                    <a href="#url">
-                      <span class="fa fa-facebook-f"></span>
-                    </a>
-                    <a href="#url">
-                      <span class="fa fa-twitter"></span>
-                    </a>
-                    <a href="#url">
-                      <span class="fa fa-instagram"></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div> --}}
-            <!-- end team member -->
           </div>
-        </div>
-      </div>
-    </section>
+        </div><br><br>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
     <!-- //team section -->
 
     <!-- skills section -->
@@ -271,69 +178,92 @@ Author URL: http://w3layouts.com
 
     <!-- footer -->
     <section class="footer-17">
-      <div class="footer17-sub pt-5">
-        <div class="container py-md-5 py-4">
-          <div class="row footer17-top mt-5 pt-md-5 pt-sm-4">
-            <div class="col-md-3 col-6">
-              <div class="footer17-top-left">
-                <h6>Customer Care</h6>
-                <ul>
-                  <li><a href="contact.html">Contact Us</a></li>
-                  <li><a href="#work">How We Work</a></li>
-                  <li><a href="#aquarium">Aquarium Info</a></li>
-                  <li><a href="#questions">Main Questions</a></li>
-                  <li><a href="#info">Information</a></li>
-                </ul>
+        <div class="footer17-sub pt-5">
+          <div class="container py-md-5 py-4">
+            <!-- <div class="text-center mb-4">
+              <a class="footer-logo" href="index.html">Aquarium</a>
+            </div> -->
+            <!-- <form
+              action="#url"
+              method="GET"
+              class="rightside-form m-auto"
+              style="max-width: 500px"
+            >
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                placeholder="Enter your email"
+              />
+              <button class="btn" type="submit">Subscribe</button>
+            </form> -->
+            <div class="row footer17-top mt-5 pt-md-5 pt-sm-4">
+              <div class="col-md-3 col-6">
+                <div class="footer17-top-left">
+                  <h6>Kontak Kami</h6>
+                  <ul>
+                    <li><a href="contact.html">Jl. Raya Halim Tiga, Halim Perdanakusuma Semarang Utara</a></li>
+                    <li><a href="#work">HP/WA: +62811 988 8801 </a></li>
+                    <li><a href="#aquarium">RSVP: +6221 2936 2015</a></li>
+                    <li><a href="#questions">Email: info@BeruangEmas.com</a></li>
+                    <li><a href="#info">www.royalejakarta.com</a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="col-md-3 col-6">
-              <div class="footer17-top-left">
-                <h6>Get To Know Us</h6>
-                <ul>
-                  <li><a href="services.html">Maintenance</a></li>
-                  <li><a href="services.html">Aquarium Design</a></li>
-                  <li><a href="services.html">Cleaning Services</a></li>
-                  <li><a href="services.html">Aquarium Supplies</a></li>
-                  <li><a href="services.html">Health Services</a></li>
-                </ul>
+              <div class="col-md-3 col-6">
+                <div class="footer17-top-left">
+                  <h6>Jam Operasional</h6>
+                  <ul>
+                    <li><a href="">Senin-Rabu: 07:00 – 19:30</a></li>
+                    <li><a href="">Kamis-jumat: 06:30 – 20:00</a></li>
+                    <li><a href="">Sabtu: 06:00 – 20:30</a></li>
+                    <li><a href="">Minggu: 06:00 – 21:00</a></li>
+
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="col-md-3 col-6 mt-md-0 mt-4">
-              <div class="footer17-top-left">
-                <h6>Ways To Shop</h6>
-                <ul>
-                  <li><a href="#store">Our Store</a></li>
-                  <li><a href="#cart">Shopping Cart</a></li>
-                  <li><a href="#account">My Account</a></li>
-                  <li><a href="#offers">Our Offers</a></li>
-                  <li><a href="#map">Sitemap</a></li>
-                </ul>
+              <div class="col-md-3 col-6 mt-md-0 mt-4">
+                <div class="footer17-top-left">
+                  <h6>Header</h6>
+                  <ul>
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="/kategori">Kategori</a></li>
+                    <li><a href="/tentangkami">Tentang Kami</a></li>
+                    <li><a href="/Berita">Berita</a></li>
+                    <li><a href="/reservasi">Reservasi</a></li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="col-md-3 col-6 mt-md-0 mt-4">
-              <div class="footer17-top-left border-0">
-                <h6>Legal</h6>
-                <ul>
-                  <li><a href="#url">Privacy policy</a></li>
-                  <li><a href="#url">Terms of use</a></li>
-                  <li><a href="#url">FAQ</a></li>
-                  <li><a href="#url">Return Policy</a></li>
-                  <li><a href="#url">Support</a></li>
-                </ul>
+              <div class="col-md-3 col-6 mt-md-0 mt-4">
+                <div class="footer17-top-left border-0">
+                  <h6>Media Sosial</h6>
+                  <ul>
+                    <li><a href="#url">
+                        <span class="fa fa-facebook-f">PuncakGOLF</span>
+                    </a></li>
+                    <li><a href="#url">
+                        <span class="fa fa-twitter">PuncakGOLF</span>
+                    </a></li>
+                    <li><a href="#url">
+                        <span class="fa fa-instagram">PuncakGOLF</span>
+                    </a></li>
+                    <li><a href="#url"></a></li>
+                    <li><a href="#url"></a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        {{-- <div class="copyright text-center">
-          <div class="container">
-            <p class="copy-footer-29">
-              © 2021 Aquarium. All rights reserved | Designed by
-              <a href="https://w3layouts.com" target="_blank">W3layouts</a>
-            </p>
+          {{-- <div class="copyright text-center">
+            <div class="container">
+              <p class="copy-footer-29">
+                © 2021 Aquarium. All rights reserved | Designed by
+                <a href="https://w3layouts.com" target="_blank">W3layouts</a>
+              </p>
+            </div>
           </div> --}}
         </div>
-      </div>
-    </section>
+      </section>
     <!-- //footer -->
 
     <!-- Js scripts -->
