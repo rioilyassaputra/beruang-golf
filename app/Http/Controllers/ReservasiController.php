@@ -12,7 +12,7 @@ class ReservasiController extends Controller
 {
     public function index(Reservasi $reservasi)
     {
-        $pesanan = Reservasi::all();
+        $pesanan = Reservasi::latest()->paginate(5);
         return view('admin.reservasi.index', compact('reservasi', 'pesanan'));
     }
     public function create(Reservasi $reservasi)
@@ -134,7 +134,7 @@ class ReservasiController extends Controller
         return redirect()->route('reservasi.index')->with('success', 'data berhasil dihapus');
     }
 
-    public function konfirmasi(Reservasi $reservasi, Request $request)
+    public function confirm(Request $request, $id)
     {
         $request->validate([
             'bukti_pembayaran' => 'required',
@@ -142,13 +142,27 @@ class ReservasiController extends Controller
 
         $file = $request->file('bukti_pembayaran');
         $nama_file = time() . "_" . $file->getClientOriginalName();
-        $location = 'admin/paket';
+        $location = 'admin/bukti_pembayaran';
         $file->move($location, $nama_file);
 
-        $reservasi->update([
-            'status'     => 'lunas',
+        $reservasiId = $request->input('id');
+
+        $reservasi = Reservasi::find($reservasiId);
+
+        if (!$reservasi) {
+            return back()->with(['error' => 'Reservasi tidak ditemukan']);
+        }
+
+        $reservasi = Reservasi::where('id', $reservasiId)->update([
+            'status'     => 'konfirm',
             'bukti_pembayaran'     => $nama_file,
         ]);
-        return back()->with(['success' => 'Reservasi telah lunas!']);
+        // dd($reservasi);
+
+        if ($reservasi) {
+            return back()->with(['success' => 'Reservasi telah di konfirmasi!']);
+        } else {
+            return back()->with(['error' => 'Gagal mengkonfirmasi reservasi.']);
+        }
     }
 }

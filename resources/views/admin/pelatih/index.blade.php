@@ -29,7 +29,7 @@
                                         </td>
                                         <td> <img src="{{ url('/admin/pelatih/' . @$pl->gambar) }}" ></td>
                                         <td>{{ $pl->nama }}</td>
-                                        <td>{{ $pl->deskripsi }}</td>
+                                        <td>{!! $pl->deskripsi !!}</td>
                                         <td>
                                             <form action="{{ route('pelatih.destroy', $pl->id) }}" method="post">
                                                 <a href="{{ route('pelatih.edit', $pl->id) }}"

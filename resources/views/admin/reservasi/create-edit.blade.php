@@ -73,8 +73,13 @@
                         </div>
                         <div class="form-group col-sm-6">
                             <label for="" class="form-label">email</label>
-                            <input type="email" value="{{ old('email', $reservasi->email) }}" class="form-control" name="email"
+                            <input type="email" value="{{ old('email', $reservasi->email) }}" class="form-control @error('email') is-invalid @enderror" name="email"
                                 id="">
+                                @error('email')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <button class="btn btn-primary mx-3 mb-3" type="submit">Simpan</button>
@@ -106,7 +111,7 @@
 
 $("#paket").change(function() {
     // Mendapatkan nilai yang dipilih dari dropdown paket
-    var selectedPaket = $(this).val();
+    let selectedPaket = $(this).val();
 
     @foreach ($paket as $item)
         if (selectedPaket == "{{ $item->id }}") {
