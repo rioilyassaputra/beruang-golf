@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paket;
+use Barryvdh\DomPDF\PDF;
 use App\Models\Reservasi;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ReservasiController extends Controller
@@ -20,7 +22,7 @@ class ReservasiController extends Controller
         $paket = Paket::all();
         return view('admin.reservasi.create-edit', compact('reservasi', 'paket'));
     }
-    public function store(Request $request)
+    public function reservasiuser(Request $request)
     {
         $noakhir = Reservasi::max('id');
         $tgl = date('d-m-y');
@@ -63,17 +65,17 @@ class ReservasiController extends Controller
             'tanggal' => $request->tanggal,
             'status' => 'pending',
             'email' => $request->email,
+            'id_user' => Auth::user()->id,
         ];
         if ($paket) {
             // Menambahkan harga ke dalam data yang akan disimpan
             $data['harga'] = $paket->harga;
         }
-
         Reservasi::create($data);
 
 
 
-        return redirect()->route('reservasi.index')->with('success', 'data berhasil ditambahkan');
+        return redirect()->route('sukses')->with('success', 'data berhasil ditambahkan');
     }
     public function edit(Reservasi $reservasi)
     {
@@ -164,5 +166,15 @@ class ReservasiController extends Controller
         } else {
             return back()->with(['error' => 'Gagal mengkonfirmasi reservasi.']);
         }
+    }
+
+    public function pdf($id)
+    {
+        $reservasi = reservasi::find($id);
+
+        $pdf = app('dompdf.wrapper');
+        $pdf->loadview('admin.reservasi.pdf', ['reservasi' => $reservasi])->setOptions(['defaultFont' => 'sans-serif'])->setPaper('a5', 'landscape');
+        $pdfFileName = 'reservasi_' . $reservasi->id . '.pdf';
+        return $pdf->stream($pdfFileName);
     }
 }

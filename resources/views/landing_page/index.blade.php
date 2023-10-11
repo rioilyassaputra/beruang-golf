@@ -11,7 +11,7 @@ Author URL: http://w3layouts.com
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Beruang Emas Golf</title>
+    <title>Puncak Golf</title>
     <!-- google-fonts -->
     <link
       href="//fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"

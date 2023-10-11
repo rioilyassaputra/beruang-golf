@@ -74,7 +74,7 @@ Author URL: http://w3layouts.com
                             class="radius-image"
                           /></a>
                         <div class="blog-info">
-                            <h5>Feb 20, 2021</h5>
+                            <h5>{{ $pkt->created_at->diffForHumans() }}</h5>
                             <h4><a href="#blog">{{$pkt->nama}}</a></h4>
                             {!!str_replace("&Amp;Nbsp;", " ",  Str::limit($pkt->deskripsi,51)) !!} <br>
                             <a class="btn btn-style mt-4" href="{{route('kategori.detail', $pkt->id)}}">Read More</a>

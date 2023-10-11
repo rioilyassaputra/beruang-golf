@@ -7,15 +7,15 @@
     <title>Login</title>
 
     <!-- General CSS Files -->
-    <link rel="stylesheet" href="admin/assets/modules/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="admin/assets/modules/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('')}}admin/assets/modules/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('')}}admin/assets/modules/fontawesome/css/all.min.css">
 
     <!-- CSS Libraries -->
-    <link rel="stylesheet" href="admin/assets/modules/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="{{asset('')}}admin/assets/modules/bootstrap-social/bootstrap-social.css">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="admin/assets/css/style.css">
-    <link rel="stylesheet" href="admin/assets/css/components.css">
+    <link rel="stylesheet" href="{{asset('')}}admin/assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('')}}admin/assets/css/components.css">
     <!-- Start GA -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
     <script>
@@ -56,7 +56,7 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <form method="POST" action="/login" class="needs-validation" novalidate="">
+                                    <form method="POST" action="/loginproses" class="needs-validation" novalidate="">
                                         @csrf
                                         <div class="form-group">
                                             <label for="email">Email</label>
@@ -71,7 +71,7 @@
                                             <div class="d-block">
                                                 <label for="password" class="control-label">Password</label>
                                                 <div class="float-right">
-                                                    {{-- <a href="admin/auth-forgot-password.html" class="text-small">
+                                                    {{-- <a href="{{asset('')}}admin/auth-forgot-password.html" class="text-small">
                                                         Forgot Password?
                                                     </a> --}}
                                                 </div>

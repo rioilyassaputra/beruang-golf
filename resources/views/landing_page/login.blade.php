@@ -7,7 +7,7 @@ Author URL: http://w3layouts.com
 <html lang="zxx">
 
 <head>
-    <title>Report Login Form Responsive Widget Template :: W3layouts</title>
+    <title>Masuk</title>
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
@@ -27,20 +27,21 @@ Author URL: http://w3layouts.com
 
     <!-- form section start -->
     <section class="w3l-hotair-form">
-        <h1>Report Login Form</h1>
+        <h1>Masukkan Akun Kamu</h1>
         <div class="container">
             <!-- /form -->
             <div class="workinghny-form-grid">
                 <div class="main-hotair">
                     <div class="content-wthree">
-                        <h2>Log In</h2>
-                        <form action="#" method="post">
+                        <h2>Masuk</h2>
+                        <form action="/loginuser" method="post">
+                            @csrf
                             <input type="email" class="email" name="email" placeholder="User Email" required="" autofocus>
                             <input type="password" class="password" name="password" placeholder="User Password" required="" autofocus>
-                            <button class="btn" type="submit">Log In</button>
+                            <button class="btn" type="submit">Masuk</button>
                         </form>
 
-                        <p class="account">Sudah Punya Akun? <a href="/user/register">Register</a></p>
+                        <p class="account">Belum Punya Akun? <a href="/daftar">Register</a></p>
                     </div>
                     <div class="w3l_form align-self">
                         <div class="left_grid_info">

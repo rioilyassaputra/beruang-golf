@@ -87,55 +87,31 @@
             </div>
         </div>
     </div>
-{{-- @push('js') --}}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+@push('js')
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
     $(document).ready(function() {
     // $('#paket').hide();
     $('#label_paket').hide();
-    $('#jam').hide();
+    // $('#jam').hide();
+    @foreach ($paket as $item)
+            $('#{{ $item->id }}').hide()
+        @endforeach
 });
 
-// $("#paket").change(function() {
-//     @foreach ($paket as $item)
-//         if ($(this).val() == "{{ $item->id }}") {
-//             $('#{{ $item->id }}').show();
-//         } else {
-//             $('#{{ $item->id }}').hide();
-//         }
-//     @endforeach
-
-//     // // Menyembunyikan elemen dengan id "jam" saat memilih paket
-//     $('#jam').hide();
-// });
-
 $("#paket").change(function() {
-    // Mendapatkan nilai yang dipilih dari dropdown paket
-    let selectedPaket = $(this).val();
-
     @foreach ($paket as $item)
-        if (selectedPaket == "{{ $item->id }}") {
+        if ($(this).val() == "{{ $item->id }}") {
             $('#{{ $item->id }}').show();
         } else {
             $('#{{ $item->id }}').hide();
         }
     @endforeach
 
-    // Menampilkan elemen dengan id "jam" jika paket tertentu dipilih
-    if (selectedPaket == "{{ $item->id }}") { // Gantilah "paketTertentu" dengan nilai paket yang sesuai
-        $('#jam').show();
-    } else {
-        $('#jam').hide();
-    }
 });
 
-
-
-
-
-
-
     </script>
-{{-- @endpush --}}
+@endpush
 
 @endsection
