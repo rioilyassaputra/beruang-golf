@@ -8,6 +8,9 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Admin</li>
+            <li class="{{ request()->routeis('dashboard') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+            </li>
             {{-- <li class="{{ request()->routeis('dashboard') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i><span>Dashboard</span></a>
             </li> --}}
@@ -28,7 +31,7 @@
             </li> --}}
             <li class="menu-header">Menu</li>
             <li class="{{ request()->routeis('lapangan.*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('lapangan.index') }}"><i class="fas fa-fire"></i><span>Lapangan</span></a>
+                <a class="nav-link" href="{{ route('lapangan.index') }}"><i class="fas fa-golf-flag-hole"></i><span>Lapangan</span></a>
             </li>
             <li class="{{ request()->routeis('pelatih.*') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('pelatih.index') }}"><i class="fas fa-user"></i><span>Pelatih</span></a>
@@ -40,7 +43,7 @@
                 <a class="nav-link" href="{{ route('paket.index') }}"><i class="fas fa-book"></i><span>Paket</span></a>
             </li>
             <li class="{{ request()->routeis('reservasi.*') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('reservasi.index') }}"><i class="fas fa-book-open-reader"></i><span>Reservasi</span></a>
+                <a class="nav-link" href="{{ route('reservasi.index') }}"><i class="fas fa-book-open"></i><span>Reservasi</span></a>
             </li>
             {{-- <li
                 class="dropdown {{ request()->routeis('incoming-mail.*', 'outgoing-mail.*', 'position.*') ? 'active' : '' }}">

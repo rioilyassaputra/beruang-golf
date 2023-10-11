@@ -3,16 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paket;
+use Barryvdh\DomPDF\PDF;
 use App\Models\Reservasi;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class ReservasiController extends Controller
 {
     public function index(Reservasi $reservasi)
     {
-        $pesanan = Reservasi::all();
+        $pesanan = Reservasi::latest()->paginate(5);
         return view('admin.reservasi.index', compact('reservasi', 'pesanan'));
     }
     public function create(Reservasi $reservasi)
@@ -20,7 +22,7 @@ class ReservasiController extends Controller
         $paket = Paket::all();
         return view('admin.reservasi.create-edit', compact('reservasi', 'paket'));
     }
-    public function store(Request $request)
+    public function reservasiuser(Request $request)
     {
         $noakhir = Reservasi::max('id');
         $tgl = date('d-m-y');
@@ -63,17 +65,17 @@ class ReservasiController extends Controller
             'tanggal' => $request->tanggal,
             'status' => 'pending',
             'email' => $request->email,
+            'id_user' => Auth::user()->id,
         ];
         if ($paket) {
             // Menambahkan harga ke dalam data yang akan disimpan
             $data['harga'] = $paket->harga;
         }
-
         Reservasi::create($data);
 
 
 
-        return redirect()->route('reservasi.index')->with('success', 'data berhasil ditambahkan');
+        return redirect()->route('sukses')->with('success', 'data berhasil ditambahkan');
     }
     public function edit(Reservasi $reservasi)
     {
@@ -134,7 +136,7 @@ class ReservasiController extends Controller
         return redirect()->route('reservasi.index')->with('success', 'data berhasil dihapus');
     }
 
-    public function konfirmasi(Reservasi $reservasi, Request $request)
+    public function confirm(Request $request, $id)
     {
         $request->validate([
             'bukti_pembayaran' => 'required',
@@ -142,13 +144,37 @@ class ReservasiController extends Controller
 
         $file = $request->file('bukti_pembayaran');
         $nama_file = time() . "_" . $file->getClientOriginalName();
-        $location = 'admin/paket';
+        $location = 'admin/bukti_pembayaran';
         $file->move($location, $nama_file);
 
-        $reservasi->update([
-            'status'     => 'lunas',
+        $reservasiId = $request->input('id');
+
+        $reservasi = Reservasi::find($reservasiId);
+
+        if (!$reservasi) {
+            return back()->with(['error' => 'Reservasi tidak ditemukan']);
+        }
+
+        $reservasi = Reservasi::where('id', $reservasiId)->update([
+            'status'     => 'konfirm',
             'bukti_pembayaran'     => $nama_file,
         ]);
-        return back()->with(['success' => 'Reservasi telah lunas!']);
+        // dd($reservasi);
+
+        if ($reservasi) {
+            return back()->with(['success' => 'Reservasi telah di konfirmasi!']);
+        } else {
+            return back()->with(['error' => 'Gagal mengkonfirmasi reservasi.']);
+        }
+    }
+
+    public function pdf($id)
+    {
+        $reservasi = reservasi::find($id);
+
+        $pdf = app('dompdf.wrapper');
+        $pdf->loadview('admin.reservasi.pdf', ['reservasi' => $reservasi])->setOptions(['defaultFont' => 'sans-serif'])->setPaper('a5', 'landscape');
+        $pdfFileName = 'reservasi_' . $reservasi->id . '.pdf';
+        return $pdf->stream($pdfFileName);
     }
 }

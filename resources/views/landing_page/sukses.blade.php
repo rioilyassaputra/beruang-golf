@@ -14,20 +14,20 @@ Author URL: http://w3layouts.com
     <title>Beruang Emas Golf</title>
     <!-- google-fonts -->
     <link
-      href="//fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
+      href="{{asset('')}}//fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
-      href="//fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap"
+      href="{{asset('')}}//fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
-      href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      href="{{asset('')}}//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <!-- //google-fonts -->
     <!-- Template CSS Style link -->
-    <link rel="stylesheet" href="landing_page/assets/css/style-starter.css" />
+    <link rel="stylesheet" href="{{asset('')}}landing_page/assets/css/style-starter.css" />
   </head>
 
   <body>
@@ -35,112 +35,32 @@ Author URL: http://w3layouts.com
     @include('component.navbar')
     <!-- //header -->
 
-    <!-- inner banner -->
-    <div class="inner-banner">
-      <section class="w3l-breadcrumb py-5">
-        <div class="container py-lg-5 py-sm-4 mt-5">
-          <h4 class="inner-text-title font-weight-bold mb-2">Reservasi</h4>
-          <ul class="breadcrumbs-custom-path">
-            <li><a href="/">Beranda</a></li>
-            <li class="active">
-              <span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>
-              Reservasi
-            </li>
-          </ul>
+
+
+    <section class="w3l-aboutblock py-5">
+        <div class="container py-md-5 py-sm-4">
+          <div class="row">
+            <div class="col-lg-6 left-wthree-img mb-lg-0 mb-md-5 mb-4">
+              <img
+                class="img-fluid img-responsive"
+                src="landing_page/assets/images/golf2.jpg"
+                alt=" "
+              />
+            </div>
+            <div
+              class="col-lg-6 about-right-faq align-self position-relative pl-lg-5"
+            >
+              <h6 class="left-text-design">Puncak Golf</h6>
+              <h3 class="title-style mb-2 pl-4">Terima Kasih Telah Reservasi Di Puncak Golf</h3>
+              <p class="mt-3 pl-4">
+               Tunggu Konfirmasi Wa Dari Kami 1x24 jam
+              </p>
+
+
+            </div>
+          </div>
         </div>
       </section>
-    </div>
-    <!-- //inner banner -->
-
-    <!-- contact -->
-    <section class="w3l-contact-info-main py-5" id="contact">
-      <div class="container py-md-5 py-4">
-        <div
-          class="title-main text-center mx-auto mb-4"
-          style="max-width: 700px"
-        >
-          <h3 class="title-style">Reservasi</h3>
-          {{-- <p class="sub-title mt-2">
-            Cum doctus civibus efficiantur in imperdiet deterruisset. Cras
-            efficitur, metus gravida suscipit cursus, dui diam pre lorem id
-            lectus.
-          </p> --}}
-        </div>
-        <div class="contact-w3pvt-form mt-5 pt-lg-4">
-          <form
-            method="post"
-            class="w3layouts-contact-fm"
-            action="{{route('reservasi.user')}}"
-          >
-          @csrf
-          <div class="form-group">
-            <label for="">Nama Lengkap*</label>
-            <input type="text" class="form-control form-control-user" value="{{ old('nama') }}" name="nama" placeholder="Nama" required>
-        </div>
-        <div class="form-group">
-            <label for="">Tanggal Reservasi*</label>
-            <input type="date" class="form-control form-control-user" value="{{ old('tanggal') }}" name="tanggal" placeholder="Tanggal Reservasi" required>
-        </div>
-        <div class="form-group">
-            <label for="">Paket*</label>
-            <select name="id_paket"
-                            class="form-control @error('id_paket')
-                                is-invalid
-                            @enderror"
-                            id="paket">
-                            <option value="" selected>--pilih paket--
-                            </option>
-                            @foreach ($paket as $pkt)
-                                @if (old('id_paket', $pkt->id) == $pkt->id)
-                                    <option value="{{ $pkt->id }}" >{{ $pkt->nama }}
-                                    </option>
-                                @else
-                                    <option value="{{ $pkt->id }}">{{ $pkt->nama }}</option>
-                                @endif
-                            @endforeach
-                        </select>
-        </div>
-        <div class="col-12" id="jam">
-            @foreach ($paket as $item)
-                <div id="{{ $item->id }}" class="col-lg-12 col-md-6">
-                    <div class="card card-body shadow h-100">
-                        <div class="d-flex align-items-start">
-                            {{-- <img class="img-fluid flex-shrink-0" src="{{ asset('masyarakat/img/icon-7.png') }}" alt=""> --}}
-                            <div class="ps-4">
-                                <h5 class="mb-3">{{ $item->nama }}</h5>
-                                <b>Jam Main</b> <br>
-                                <span>{{ \Carbon\Carbon::createFromFormat('H:i:s',$pkt->jam_mulai)->format('h:i A') }}</span> -
-                                <span>{{ \Carbon\Carbon::createFromFormat('H:i:s',$pkt->jam_selesai)->format('h:i A') }}</span> <br>
-                                <b>Maksimal Pemain</b> <br>
-                                <span>{{ $pkt->jumlah_pemain }}</span> <br>
-                                <b>Harga</b> <br>
-                                <span>{{ number_format($pkt->harga,0,',','.') }}</span> <br>
-                                <b>deskripsi</b> <br>
-                                <span>{!! $pkt->deskripsi !!}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-        <div class="form-group">
-            <label for="">No Wa*</label>
-            <input type="number" class="form-control form-control-user" name="no_telp" placeholder="No hp" required>
-        </div>
-        <div class="form-group">
-            <label for="">Gmail*</label>
-            <input type="email" class="form-control form-control-user" name="email" placeholder="Email" required>
-        </div>
-            </div>
-            <div class="form-group-2 mt-3 text-right">
-              <button type="submit" class="btn btn-style">Kirim</button>
-            </div><br>
-          </form>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126926.93493599749!2d106.785304888349!3d-6.201995866825545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f2bdb4c39073%3A0xfc11427db9e1642d!2sRoyale%20Jakarta%20Golf%20Club!5e0!3m2!1sid!2sid!4v1693886128234!5m2!1sid!2sid" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </section>
-    <!-- //contact -->
 
     <!-- footer -->
     <section class="footer-17">
@@ -180,10 +100,10 @@ Author URL: http://w3layouts.com
                 <div class="footer17-top-left">
                   <h6>Jam Operasional</h6>
                   <ul>
-                    <li><a href="">Senin-Rabu: 07:00 – 19:30</a></li>
-                    <li><a href="">Kamis-jumat: 06:30 – 20:00</a></li>
-                    <li><a href="">Sabtu: 06:00 – 20:30</a></li>
-                    <li><a href="">Minggu: 06:00 – 21:00</a></li>
+                    <li><a href="">Senin-Rabu: 07:00 – 17.00</a></li>
+                    <li><a href="">Kamis-jumat: 07:00 – 17:00</a></li>
+                    <li><a href="">Sabtu: 07:00 – 17:00</a></li>
+                    <li><a href="">Minggu: 07:00 – 17:00</a></li>
 
                   </ul>
                 </div>
@@ -205,13 +125,13 @@ Author URL: http://w3layouts.com
                   <h6>Media Sosial</h6>
                   <ul>
                     <li><a href="#url">
-                        <span class="fa fa-facebook-f">PuncakGOLF</span>
+                        <span class="fa fa-facebook-f"> PuncakGOLF</span>
                     </a></li>
                     <li><a href="#url">
-                        <span class="fa fa-twitter">PuncakGOLF</span>
+                        <span class="fa fa-twitter"> PuncakGOLF</span>
                     </a></li>
                     <li><a href="#url">
-                        <span class="fa fa-instagram">PuncakGOLF</span>
+                        <span class="fa fa-instagram"> PuncakGOLF</span>
                     </a></li>
                     <li><a href="#url"></a></li>
                     <li><a href="#url"></a></li>
@@ -308,7 +228,7 @@ Author URL: http://w3layouts.com
     <!-- //theme switch js (light and dark)-->
 
     <!-- MENU-JS -->
-    <script>
+    {{-- <script>
       $(window).on("scroll", function () {
         var scroll = $(window).scrollTop();
 
@@ -333,7 +253,7 @@ Author URL: http://w3layouts.com
           }
         });
       });
-    </script>
+    </script> --}}
     <!-- //MENU-JS -->
 
     <!-- disable body scroll which navbar is in active -->
@@ -351,28 +271,4 @@ Author URL: http://w3layouts.com
     <!-- //bootstrap-->
     <!-- //Js scripts -->
   </body>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-    $(document).ready(function() {
-    // $('#paket').hide();
-    $('#label_paket').hide();
-    // $('#jam').hide();
-    @foreach ($paket as $item)
-            $('#{{ $item->id }}').hide()
-        @endforeach
-});
-
-$("#paket").change(function() {
-    @foreach ($paket as $item)
-        if ($(this).val() == "{{ $item->id }}") {
-            $('#{{ $item->id }}').show();
-        } else {
-            $('#{{ $item->id }}').hide();
-        }
-    @endforeach
-
-});
-
-    </script>
 </html>

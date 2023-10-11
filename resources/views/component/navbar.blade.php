@@ -37,20 +37,59 @@
         <a class="nav-link" href="/kategori">Kategori</a>
       </li>
       <li class="nav-item {{request()->routeis('Berita') ? 'active' : ''}}">
-        <a class="nav-link" href="/Berita">Berita</a>
+        <a class="nav-link" href="/Berita">Berita&Acara</a>
       </li>
       <li class="nav-item {{request()->routeis('Reservasi') ? 'active' : ''}}">
         <a class="nav-link" href="/Reservasi">Reservasi</a>
       </li>
       <!-- search button -->
-      <tr>
-      <center>
-        <a href="" class="btn btn-primary mr-3">Masuk</a>
+      @if (Route::has('login'))
+                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                    @auth
+                    <li class="dropdown"><a href="#" data-toggle="dropdown"
+                        class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                        <img alt="image" src="{{ asset('') }}admin/assets/img/avatar/avatar-1.png"
+                            class="rounded-circle mr-1" height="40px" width="40px">
+                        <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        {{-- <div class="dropdown-title">Logged in 5 min ago</div>
+                        <a href="{{ route('profile') }}" class="dropdown-item has-icon">
+                            <i class="far fa-user"></i> Profile
+                        </a>
+                        <a href="features-activities.html" class="dropdown-item has-icon">
+                            <i class="fas fa-bolt"></i> Activities
+                        </a>
+                        <a href="features-settings.html" class="dropdown-item has-icon">
+                            <i class="fas fa-cog"></i> Settings
+                        </a> --}}
+                        <div class="dropdown-divider"></div>
+                        <a href="/logoutuser" class="dropdown-item has-icon text-danger">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </li>
+                    @else
+                    <div class="navbar-nav ml-lg-auto">
+                    <li class="nav item">
+                        <a href="{{route('login')}}" class="btn btn-primary mr-3">Masuk</a>
+                    </li>
+                        @if (Route::has('register'))
+                        <li class="nav item">
+                            <a href="/daftar" class="btn btn-outline-primary">Daftar</a>
+                        </li>
+                        @endif
+                    @endauth
+                </div>
+                </div>
+            @endif
+      {{-- <center>
+        <a href="{{route('login')}}" class="btn btn-primary mr-3">Masuk</a>
     </center>
 
     <center>
-        <a href="" class="btn btn-outline-primary  mr-0">Register</a>
-    </center>
+        <a href="/daftar" class="btn btn-outline-primary  mr-0">Register</a>
+    </center> --}}
 
       <!-- //search button -->
     </ul>
