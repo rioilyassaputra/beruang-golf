@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('komentars', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_berita');
+            $table->foreignId('id_user');
+            $table->text('pesan');
             $table->timestamps();
         });
     }

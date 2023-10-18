@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('tanggal');
             $table->integer('harga');
             $table->string('bukti_pembayaran')->nullable();
-            $table->string('email')->unique();
+            $table->string('email');
             $table->timestamps();
         });
     }
