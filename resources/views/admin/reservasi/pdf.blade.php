@@ -1,102 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>pdf reservasi</title>
-    <style>
-        /* Gaya CSS untuk nota reservasi tempat */
-        .nota-reservasi {
-            width: 300px;
-            margin: 0 auto;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
 
-        .nota-reservasi h2 {
-            margin-top: 10px;
-        }
-
-        .nomor-reservasi {
-            font-weight: bold;
-            margin-top: 10px;
-        }
-
-        .detail-reservasi {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin-top: 20px; /* Menambahkan sedikit jarak di sini */
-        }
-
-        .detail-reservasi-item {
-            margin-bottom: 10px;
-            text-align: left;
-        }
-
-        .detail-reservasi-label {
-            font-weight: bold;
-        }
-
-        .horizontal-line {
-            border-top: 1px solid #ccc;
-            margin: 10px 0;
-        }
-
-        .total {
-            margin-top: 10px;
-            text-align: right;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
-    <div class="nota-reservasi">
+    <center>
+
         <h2>Puncak Golf</h2>
-        <div class="nomor-reservasi">
-            <p>Nomor Reservasi: {{@$reservasi->no_reservasi}}</p>
-        </div>
-        <div class="detail-reservasi">
-            <div class="detail-reservasi-item">
-                <span class="detail-reservasi-label">Tanggal Reservasi:</span> {{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d F Y') }}
-            </div>
-            <div class="detail-reservasi-item">
-                <span class="detail-reservasi-label">Nama Pemesan:</span> {{$reservasi->nama}}
-            </div>
-            <div class="detail-reservasi-item">
-                <span class="detail-reservasi-label">No. Telepon:</span> {{$reservasi->no_telp}}
-            </div>
-            <div class="detail-reservasi-item">
-                <span class="detail-reservasi-label">Email:</span> {{$reservasi->email}}
-            </div>
-        </div>
+    </center>
+        @foreach ($reservasi as $item)
 
-        <div class="horizontal-line"></div>
 
-        <div class="detail-reservasi">
-            <div class="detail-reservasi-item">
-                <span class="detail-reservasi-label">Nama Paket:</span> {{@$reservasi->paket->nama}}
-            </div>
-            <div class="detail-reservasi-item">
-                @if ($reservasi->tanggal)
-    <span class="detail-reservasi-label">Tanggal Reservasi:</span> {{ \Carbon\Carbon::parse($reservasi->tanggal)->format('d F Y') }}
-@endif
-            </div>
-            <div class="detail-reservasi-item">
-                <span class="detail-reservasi-label">Jam Mulai:</span><td>{{ \Carbon\Carbon::createFromFormat('H:i:s',@$reservasi->paket->jam_mulai)->format('h:i A') }}</td>
-            </div>
-            <div class="detail-reservasi-item">
-                <span class="detail-reservasi-label">Jam Selesai:</span> <td>{{ \Carbon\Carbon::createFromFormat('H:i:s',@$reservasi->paket->jam_selesai)->format('h:i A') }}</td>
-            </div>
-            <div class="detail-reservasi-item">
-                @if (is_numeric($reservasi->harga))
-                <span class="detail-reservasi-label">Total Harga:</span> Rp.{{ number_format($reservasi->harga, 0, ',', '.') }}
-            @endif
-            </div>
-        </div>
+            <p>Nomor Reservasi: {{@$item->no_reservasi}}</p>
+                {{-- <span>Tanggal Reservasi:</span> {{ \Carbon\Carbon::parse($item->tanggal)->format('d F Y') }} <br> --}}
 
-        <div class="horizontal-line"></div>
+                <p>Nama Pemesan: {{$item->nama}}</p>
 
-        <div class="total">
-            <p>Total Harga: Rp.{{ number_format($reservasi->harga,0,',','.') }}</p>
-        </div>
-    </div>
+                <p>No. Telepon: {{$item->no_telp}}</p>
+
+                <p>Email: {{$item->email}}</p>
+                <b>DETAIL PESANAN</b> <br>
+
+                <span>Nama Paket:</span> {{@$item->paket->nama}} <br>
+
+    <span>Tanggal Reservasi:</span> {{ \Carbon\Carbon::parse($item->tanggal)->format('d F Y') }} <br>
+
+                <span>Jam Mulai:</span>{{ \Carbon\Carbon::createFromFormat('H:i:s',@$item->paket->jam_mulai)->format('h:i A') }} <br>
+
+                <span>Jam Selesai:</span> {{ \Carbon\Carbon::createFromFormat('H:i:s',@$item->paket->jam_selesai)->format('h:i A') }} <br>
+
+                <span>Harga:</span> Rp.{{ number_format($item->harga, 0, ',', '.') }}
+                <hr>
+            <p>Total Harga: Rp.{{ number_format($item->harga,0,',','.') }}</p>
+        @endforeach
 </body>
 </html>

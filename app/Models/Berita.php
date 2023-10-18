@@ -18,4 +18,8 @@ class Berita extends Model
             ]
         ];
     }
+    public function komentar()
+    {
+        return $this->hasMany(komentar::class, 'id_berita');
+    }
 }
