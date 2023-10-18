@@ -12,8 +12,7 @@ Author URL: http://w3layouts.com
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>
-      Aquarium - Animals Category Responsive Website Template - Services :
-      W3Layouts
+        Puncak Golf
     </title>
     <!-- google-fonts -->
     <link
@@ -77,7 +76,7 @@ Author URL: http://w3layouts.com
                             <h5>{{ $pkt->created_at->diffForHumans() }}</h5>
                             <h4><a href="#blog">{{$pkt->nama}}</a></h4>
                             {!!str_replace("&Amp;Nbsp;", " ",  Str::limit($pkt->deskripsi,51)) !!} <br>
-                            <a class="btn btn-style mt-4" href="{{route('kategori.detail', $pkt->id)}}">Read More</a>
+                            <a class="btn btn-style mt-4" href="{{route('kategori.detail', $pkt->id)}}">Detail</a>
                         </div>
                     </div>
                 </div>
@@ -265,11 +264,9 @@ Author URL: http://w3layouts.com
                 <div class="footer17-top-left">
                   <h6>Jam Operasional</h6>
                   <ul>
-                    <li><a href="">Senin-Rabu: 07:00 – 19:30</a></li>
-                    <li><a href="">Kamis-jumat: 06:30 – 20:00</a></li>
-                    <li><a href="">Sabtu: 06:00 – 20:30</a></li>
-                    <li><a href="">Minggu: 06:00 – 21:00</a></li>
-
+                    <li><a href="">Senin-Jumat: 07:00 – 16:30</a></li>
+                    <li><a href="">Sabtu: 06:30 – 17:00</a></li>
+                    <li><a href="">Minggu: 06:00 – 17:00</a></li>
                   </ul>
                 </div>
               </div>

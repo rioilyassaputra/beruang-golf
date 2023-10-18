@@ -11,7 +11,7 @@ Author URL: http://w3layouts.com
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Beruang Emas Golf</title>
+    <title>Puncak Golf</title>
     <!-- google-fonts -->
     <link
       href="//fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
@@ -99,18 +99,30 @@ Author URL: http://w3layouts.com
         <div class="container py-md-5 py-sm-4">
             <div class="row">
                 <div class="col-lg-6 left-wthree-img mb-lg-0 mb-md-5 mb-4">
-                    <img class="img-fluid img-responsive" src="landing_page/assets/images/a4.jpg" alt="">
+                    <img class="img-fluid img-responsive" src="landing_page/assets/images/a4.jpg" style="height: 60%; width: 80%" alt=""><br>
+                    <strong>JAM OPRASIONAL</strong></span></h2><br>
+<h3 style="text-align: justify;"><strong>Puncak Golf</strong></h3>
+<p>Selasa s/d Jumat Pkl. 07.00 – 16.30 wib</p>
+<p>Sabtu Pkl. 06.30 – 17.00 wib</p>
+<p>Minggu Pkl. 06.00 – 17.00 wib</p>
+<p>&nbsp;</p>
+<h3 style="text-align: justify;"><strong>Taman Indie Resto<br>
+</strong></h3>
+<p>Selasa&nbsp;– Minggu, Pkl. 08.00 – 16.00 wib</p>
+<p>&nbsp;</p>
+
                 </div>
                 <div class="col-lg-6 about-right-faq align-self position-relative pl-lg-5">
                     <h3 class="title-style mb-2 pl-4">PT PUNCAK CLUB GOLF</h3>
                     <div class="text-content">
-                        <div class="text-content" style="text-align: justify;">
-                                <div class="newspaper-text">
-                                  Komitmen Group PUNCAK Golf untuk terus mengembangkan kawasan kota mandiri hingga 1.000 hektar dibuktikan dengan pengembangan proyek The PUNCAK seluas 150 hektar dengan mempertahankan konsep Golf Residence & Real Estate, sehingga tidaklah berlebihan apabila The PUNCAK selama ini menyandang gelar The Only Golf Residence. Master Plan yang dirancang oleh Peddle Thorp Gillespie dari Brisbane, Australia diyakini mampu memberikan kualitas kawasan yang sangat berkelas. Mengacu pada konsep di atas beberapa fasilitas prestisius pun dibangun untuk memenuhi kebutuhan rekreatif warga The PUNCAK.
-                            Salah satu fasilitas yang dikembangkan tersebut adalah PUNCAK Golf & Family Club, yang pengelolaanya dipercayakan kepada PT. PUNCAK Golf, salah satu anak perusahaan di bawah payung manajemen PUNCAK Group. Perusahaan ini dipercaya untuk mengelola beberapa fasilitas The PUNCAK, antara lain PUNCAK Golf, Family Club, Taman Indie Resto serta Bataputi Coffee House. Golf course rancangan designer golf terkemuka J. Michael Poellot ini dikembangkan dengan 2 konsep yang membentuk karakter padang golf yang berbeda. Lake golf course, 9 hole pertama dengan tantangan bermain didominasi bantaran sungai, danau serta sawah. Hill golf course, 9 hole kedua, dibangun ditanah yang berkontur cukup curam diantara bukit dan lembah. Kontur lapangan dipadu dengan creek yang dalam merupakan tantangan bagi para golfer untuk menaklukkannya. Pemandangan spektakuler bukit dan lembah dengan background city view bisa dinikmati sepanjang perjalan permainan golf di hill golf course.
-                                Pada pertengahan tahun 2015, PT. PUNCAK Golf mulai mengoperasikan Driving Range baru, PUNCAK Golf Driving Range. Driving range dengan kapasitas 25 bay ini menggantikan fungsi driving range lama, yang tentu saja dengan berbagai kelebihan di sana-sini. Lengkap dengan penerangan dan target green sampai sejauh 250 meter, fasilitas olahraga ini juga dilengkapi dengan cafe tersendiri, yang akan mendampingi anda setiap kali berlatih.
-                                </div>
-                        </div>
+
+<p style="text-align: justify;">Komitmen Group Puncak untuk terus mengembangkan kawasan kota mandiri hingga 1.000 hektar dibuktikan dengan pengembangan proyek <strong>The Puncak</strong> seluas 150 hektar dengan mempertahankan konsep Golf Residence &amp; Real Estate, sehingga tidaklah berlebihan apabila The Puncak selama ini menyandang gelar <strong>The Only Golf Residence</strong>. Master Plan yang dirancang oleh <strong>Peddle Thorp Gillespie dari Brisbane, Australia</strong> diyakini mampu memberikan kualitas kawasan yang sangat berkelas. Mengacu pada konsep di atas beberapa fasilitas prestisius pun dibangun untuk memenuhi kebutuhan rekreatif warga The Puncak.</p>
+<p style="text-align: justify;">Salah satu fasilitas yang dikembangkan tersebut adalah <strong>Puncak Golf &amp; Family Club</strong>, yang pengelolaanya dipercayakan kepada <strong>PT. Puncak Megah Abadi Golf</strong>, salah satu anak perusahaan di bawah payung manajemen Puncak Group. Perusahaan ini dipercaya untuk mengelola beberapa fasilitas The Puncak, antara lain Puncak Golf, Family Club, Taman Indie Resto serta Bataputi Coffee House.</p>
+<p style="text-align: justify;">Golf course rancangan designer golf terkemuka<strong> J. Michael Poellot</strong> ini dikembangkan dengan 2 konsep yang membentuk karakter padang golf yang berbeda. Lake golf course, 9 hole pertama dengan tantangan bermain didominasi bantaran sungai, danau serta sawah. Hill golf course, 9 hole kedua, dibangun ditanah yang berkontur cukup curam diantara bukit dan lembah. Kontur lapangan dipadu dengan creek yang dalam merupakan tantangan bagi para golfer untuk menaklukkannya. Pemandangan spektakuler bukit dan lembah dengan background city view bisa dinikmati sepanjang perjalan permainan golf di hill golf course.</p>
+<p style="text-align: justify;">Pada pertengahan tahun 2015, PT. Puncak Megah Abadi Golf mulai mengoperasikan Driving Range baru, <strong>Puncak Golf Driving Range.</strong> Driving range dengan kapasitas 25 bay ini menggantikan fungsi driving range lama, yang tentu saja dengan berbagai kelebihan di sana-sini. Lengkap dengan penerangan dan target green sampai sejauh 250 meter, faisilitas olahraga ini juga dilengkapi dengan cafe tersendiri, yang akan mendampingi anda setiap kali berlatih.</p>
+<h2 style="text-align: justify;"><span style="color: #333333;">
+
+
 
 
 
@@ -119,6 +131,56 @@ Author URL: http://w3layouts.com
             </div>
         </div>
     </section>
+
+
+
+    {{-- fasilitas --}}
+
+
+    <section class="w3l-call-to-action_9">
+        <div class="call-w3 ">
+
+            <h3 class="title-style mb-4 pl-4 text-center">FASILITAS</h3>
+            <div class="container">
+                <div class="grids">
+                        <div class="grids-content row">
+                            <div class="column col-lg-4 col-md-6 ">
+                                <a href="about.html"><img src="{{asset('')}}landing_page/assets/images/a2.jpg" style="height: 50%; width: 80%" alt="" class="img-responsive"></a><br>
+                                <h4><a href="about.html"  class=" ">Cady</a></h4>
+                                <p class="para ">Membantu anda untuk mengantarkan ke lapangan</p>
+
+                            </div>
+                            <div class="column col-lg-4 col-md-6 ">
+                                <a href="about.html"><img src="{{asset('')}}landing_page/assets/images/z3.jpg" style="height: 50%; width: 80%" alt="" class="img-responsive"></a><br>
+                                <h4><a href="about.html" class=" ">Tempat Bermain Anak</a></h4>
+                                <p class="para ">Tempat bermain anak yang luas dan nyaman</p><br>
+                            </div>
+                            <div class="column col-lg-4 col-md-6 ">
+                                <a href="about.html"><img src="{{asset('')}}landing_page/assets/images/z1.jpg" style="height: 50%; width: 80%" class="img-responsive"></a><br>
+                                <h4><a href="about.html" class=" ">Area Parkir</a></h4>
+                                <p class="para ">Area parkir yang luas stategis</p>
+                            </div>
+                            <div class="column col-lg-4 col-md-6 ">
+                                <a href="about.html"><img src="{{asset('')}}landing_page/assets/images/km2.jpg" style="height: 50%; width: 80%" class="img-responsive"></a><br>
+                                <h4><a href="about.html" class=" ">Kamar Mandi</a></h4>
+                                <p class="para ">Kamar Mandi yang bersih dan nyaman</p>
+                            </div>
+                            <div class="column col-lg-4 col-md-6 ">
+                                <a href="about.html"><img src="{{asset('')}}landing_page/assets/images/lk1.jpg" style="height: 50%; width: 80%" class="img-responsive"></a><br>
+                                <h4><a href="about.html" class=" ">Loker</a></h4>
+                                <p class="para ">Beberapa loker yang berguna untuk menyimpan barang anda</p>
+                            </div>
+                            <div class="column col-lg-4 col-md-6 ">
+                                <a href="about.html"><img src="{{asset('')}}landing_page/assets/images/rs1.jpg" style="height: 50%; width: 80%" class="img-responsive"></a><br>
+                                <h4><a href="about.html" class=" ">Restoran</a></h4>
+                                <p class="para ">Tempat makanan yang enak,lezat dan nyaman</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+    {{--  --}}
     <!-- //about section -->
 
     <!-- team section -->
@@ -144,7 +206,7 @@ Author URL: http://w3layouts.com
                   <a href="#feature" class="title-head mt-4">{{$pl->nama}}</a>
                 </h4>
                 {!!str_replace("&Amp;Nbsp;", " ",  Str::limit($pl->deskripsi,51)) !!} <br>
-                <a class="btn btn-style mt-4" href="{{route('pelatih.detail', $pl->id)}}">Read More</a>
+                <a class="btn btn-style mt-4" href="{{route('pelatih.detail', $pl->id)}}">Detail</a>
               </div>
             </div>
             @endforeach
@@ -214,10 +276,9 @@ Author URL: http://w3layouts.com
                 <div class="footer17-top-left">
                   <h6>Jam Operasional</h6>
                   <ul>
-                    <li><a href="">Senin-Rabu: 07:00 – 19:30</a></li>
-                    <li><a href="">Kamis-jumat: 06:30 – 20:00</a></li>
-                    <li><a href="">Sabtu: 06:00 – 20:30</a></li>
-                    <li><a href="">Minggu: 06:00 – 21:00</a></li>
+                    <li><a href="">Senin-Jumat: 07:00 – 16:30</a></li>
+                    <li><a href="">Sabtu: 06:30 – 17:00</a></li>
+                    <li><a href="">Minggu: 06:00 – 17:00</a></li>
 
                   </ul>
                 </div>

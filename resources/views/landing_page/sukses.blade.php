@@ -11,7 +11,7 @@ Author URL: http://w3layouts.com
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Beruang Emas Golf</title>
+    <title>Puncak Golf</title>
     <!-- google-fonts -->
     <link
       href="{{asset('')}}//fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
@@ -35,7 +35,56 @@ Author URL: http://w3layouts.com
     @include('component.navbar')
     <!-- //header -->
 
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        var toast = Swal.mixin({
+            toast: true,
+            title: 'General Title',
+            animation: false,
+            position: 'top-right',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+        });
+    </script>
+    @if ($message = Session::get('success'))
+        <script type="text/javascript">
+            toast.fire({
+                animation: true,
+                title: 'Sukses',
+                text: '{{ $message }}',
+                icon: 'success'
+            });
+        </script>
+    @endif
+    @if ($message = Session::get('error'))
+        <script type="text/javascript">
+            Swal.fire(
+                'Error',
+                '{{ $message }}',
+                'error'
+            )
+        </script>
+    @endif
+    @if ($message = Session::get('failed'))
+        <script type="text/javascript">
+            Swal.fire(
+                'Error',
+                '{{ $message }}',
+                'error'
+            )
+        </script>
+    @endif
+    @if ($message = Session::get('warning'))
+        <script type="text/javascript">
+            toast.fire({
+                animation: true,
+                title: 'Warning',
+                text: '{{ $message }}',
+                icon: 'warning'
+            });
+        </script>
+    @endif
 
     <section class="w3l-aboutblock py-5">
         <div class="container py-md-5 py-sm-4">
@@ -51,9 +100,9 @@ Author URL: http://w3layouts.com
               class="col-lg-6 about-right-faq align-self position-relative pl-lg-5"
             >
               <h6 class="left-text-design">Puncak Golf</h6>
-              <h3 class="title-style mb-2 pl-4">Terima Kasih Telah Reservasi Di Puncak Golf</h3>
+              <h3 class="title-style mb-2 pl-4">Terima Kasih Telah Reservasi Di Tempat Kami,Mohon Menunggu Konfirmasi Dari Kami</h3>
               <p class="mt-3 pl-4">
-               Tunggu Konfirmasi Wa Dari Kami 1x24 jam
+               Kami Akan Segera Menghubungi Anda Dalam Kurun Waktu Max 1x24 jam
               </p>
 
 
@@ -100,10 +149,9 @@ Author URL: http://w3layouts.com
                 <div class="footer17-top-left">
                   <h6>Jam Operasional</h6>
                   <ul>
-                    <li><a href="">Senin-Rabu: 07:00 – 17.00</a></li>
-                    <li><a href="">Kamis-jumat: 07:00 – 17:00</a></li>
-                    <li><a href="">Sabtu: 07:00 – 17:00</a></li>
-                    <li><a href="">Minggu: 07:00 – 17:00</a></li>
+                    <li><a href="">Senin-Jumat: 07:00 – 16:30</a></li>
+                    <li><a href="">Sabtu: 06:30 – 17:00</a></li>
+                    <li><a href="">Minggu: 06:00 – 17:00</a></li>
 
                   </ul>
                 </div>

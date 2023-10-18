@@ -39,9 +39,9 @@
       <li class="nav-item {{request()->routeis('Berita') ? 'active' : ''}}">
         <a class="nav-link" href="/Berita">Berita&Acara</a>
       </li>
-      <li class="nav-item {{request()->routeis('Reservasi') ? 'active' : ''}}">
+      {{-- <li class="nav-item {{request()->routeis('Reservasi') ? 'active' : ''}}">
         <a class="nav-link" href="/Reservasi">Reservasi</a>
-      </li>
+      </li> --}}
       <!-- search button -->
       @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">

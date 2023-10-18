@@ -34,6 +34,56 @@ Author URL: http://w3layouts.com
     <!--header-->
     @include('component.navbar')
     <!-- //header -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        var toast = Swal.mixin({
+            toast: true,
+            title: 'General Title',
+            animation: false,
+            position: 'top-right',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+        });
+    </script>
+    @if ($message = Session::get('success'))
+        <script type="text/javascript">
+            toast.fire({
+                animation: true,
+                title: 'Sukses',
+                text: '{{ $message }}',
+                icon: 'success'
+            });
+        </script>
+    @endif
+    @if ($message = Session::get('error'))
+        <script type="text/javascript">
+            Swal.fire(
+                'Error',
+                '{{ $message }}',
+                'error'
+            )
+        </script>
+    @endif
+    @if ($message = Session::get('failed'))
+        <script type="text/javascript">
+            Swal.fire(
+                'Error',
+                '{{ $message }}',
+                'error'
+            )
+        </script>
+    @endif
+    @if ($message = Session::get('warning'))
+        <script type="text/javascript">
+            toast.fire({
+                animation: true,
+                title: 'Warning',
+                text: '{{ $message }}',
+                icon: 'warning'
+            });
+        </script>
+    @endif
 
     <!-- inner banner -->
     <section class="inner-banner">
@@ -307,10 +357,9 @@ Author URL: http://w3layouts.com
                 <div class="footer17-top-left">
                   <h6>Jam Operasional</h6>
                   <ul>
-                    <li><a href="">Senin-Rabu: 07:00 – 19:30</a></li>
-                    <li><a href="">Kamis-jumat: 06:30 – 20:00</a></li>
-                    <li><a href="">Sabtu: 06:00 – 20:30</a></li>
-                    <li><a href="">Minggu: 06:00 – 21:00</a></li>
+                    <li><a href="">Senin-Jumat: 07:00 – 16:30</a></li>
+                    <li><a href="">Sabtu: 06:30 – 17:00</a></li>
+                    <li><a href="">Minggu: 06:00 – 17:00</a></li>
 
                   </ul>
                 </div>

@@ -93,7 +93,8 @@ Author URL: http://w3layouts.com
                       <h1 class="slideshow__slide-caption-title mt-2">
                          Selamat Datang di Puncak Golf
                       </h1>
-                      <!-- <a class="btn btn-style mt-sm-5 mt-4" href="contact.html">Contact Now</a> -->
+
+                       <a class="btn btn-style mt-sm-5 mt-4" href="/Reservasi">Pesan Sekarang</a>
                     </div>
                   </div>
                 </div>
@@ -367,10 +368,9 @@ Author URL: http://w3layouts.com
               <div class="footer17-top-left">
                 <h6>Jam Operasional</h6>
                 <ul>
-                  <li><a href="">Senin-Rabu: 07:00 – 19:30</a></li>
-                  <li><a href="">Kamis-jumat: 06:30 – 20:00</a></li>
-                  <li><a href="">Sabtu: 06:00 – 20:30</a></li>
-                  <li><a href="">Minggu: 06:00 – 21:00</a></li>
+                    <li><a href="">Senin-Jumat: 07:00 – 16:30</a></li>
+                    <li><a href="">Sabtu: 06:30 – 17:00</a></li>
+                    <li><a href="">Minggu: 06:00 – 17:00</a></li>
 
                 </ul>
               </div>

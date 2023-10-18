@@ -11,7 +11,7 @@ Author URL: http://w3layouts.com
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Beruang Emas Golf</title>
+    <title>Puncak Golf</title>
     <!-- google-fonts -->
     <link
       href="//fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
@@ -36,7 +36,60 @@ Author URL: http://w3layouts.com
     <!-- //header -->
 
     <!-- inner banner -->
+
+
     <div class="inner-banner">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            var toast = Swal.mixin({
+                toast: true,
+                title: 'General Title',
+                animation: false,
+                position: 'top-right',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+            });
+        </script>
+        @if ($message = Session::get('success'))
+            <script type="text/javascript">
+                toast.fire({
+                    animation: true,
+                    title: 'Sukses',
+                    text: '{{ $message }}',
+                    icon: 'success'
+                });
+            </script>
+        @endif
+        @if ($message = Session::get('error'))
+            <script type="text/javascript">
+                Swal.fire(
+                    'Error',
+                    '{{ $message }}',
+                    'error'
+                )
+            </script>
+        @endif
+        @if ($message = Session::get('failed'))
+            <script type="text/javascript">
+                Swal.fire(
+                    'Error',
+                    '{{ $message }}',
+                    'error'
+                )
+            </script>
+        @endif
+        @if ($message = Session::get('warning'))
+            <script type="text/javascript">
+                toast.fire({
+                    animation: true,
+                    title: 'Warning',
+                    text: '{{ $message }}',
+                    icon: 'warning'
+                });
+            </script>
+        @endif
+
       <section class="w3l-breadcrumb py-5">
         <div class="container py-lg-5 py-sm-4 mt-5">
           <h4 class="inner-text-title font-weight-bold mb-2">Reservasi</h4>
@@ -54,6 +107,7 @@ Author URL: http://w3layouts.com
 
     <!-- contact -->
     <section class="w3l-contact-info-main py-5" id="contact">
+
       <div class="container py-md-5 py-4">
         <div
           class="title-main text-center mx-auto mb-4"
@@ -75,11 +129,21 @@ Author URL: http://w3layouts.com
           @csrf
           <div class="form-group">
             <label for="">Nama Lengkap*</label>
-            <input type="text" class="form-control form-control-user" value="{{ old('nama') }}" name="nama" placeholder="Nama" required>
+            <input type="text" class="form-control form-control-user  @error('nama') is-invalid @enderror" value="{{ old('nama') }}" name="nama" placeholder="Nama" required>
+            @error('nama')
+            <div class="alert alert-danger mt-2">
+                {{ $message }}
+            </div>
+        @enderror
         </div>
         <div class="form-group">
             <label for="">Tanggal Reservasi*</label>
-            <input type="date" class="form-control form-control-user" value="{{ old('tanggal') }}" name="tanggal" placeholder="Tanggal Reservasi" required>
+            <input type="date" class="form-control form-control-user  @error('tanggal') is-invalid @enderror" value="{{ old('tanggal') }}" name="tanggal" placeholder="Tanggal Reservasi" required>
+            @error('tanggal')
+            <div class="alert alert-danger mt-2">
+                {{ $message }}
+            </div>
+        @enderror
         </div>
         <div class="form-group">
             <label for="">Paket*</label>
@@ -109,14 +173,14 @@ Author URL: http://w3layouts.com
                             <div class="ps-4">
                                 <h5 class="mb-3">{{ $item->nama }}</h5>
                                 <b>Jam Main</b> <br>
-                                <span>{{ \Carbon\Carbon::createFromFormat('H:i:s',$pkt->jam_mulai)->format('h:i A') }}</span> -
-                                <span>{{ \Carbon\Carbon::createFromFormat('H:i:s',$pkt->jam_selesai)->format('h:i A') }}</span> <br>
+                                <span>{{ \Carbon\Carbon::createFromFormat('H:i:s',$item->jam_mulai)->format('h:i A') }}</span> -
+                                <span>{{ \Carbon\Carbon::createFromFormat('H:i:s',$item->jam_selesai)->format('h:i A') }}</span> <br>
                                 <b>Maksimal Pemain</b> <br>
-                                <span>{{ $pkt->jumlah_pemain }}</span> <br>
+                                <span>{{ $item->jumlah_pemain }}</span> <br>
                                 <b>Harga</b> <br>
-                                <span>{{ number_format($pkt->harga,0,',','.') }}</span> <br>
+                                <span>{{ number_format($item->harga,0,',','.') }}</span> <br>
                                 <b>deskripsi</b> <br>
-                                <span>{!! $pkt->deskripsi !!}</span>
+                                <span>{!!str_replace("&Amp;Nbsp;", " ",  $item->deskripsi) !!}</span>
                             </div>
                         </div>
                     </div>
@@ -125,11 +189,21 @@ Author URL: http://w3layouts.com
         </div>
         <div class="form-group">
             <label for="">No Wa*</label>
-            <input type="number" class="form-control form-control-user" name="no_telp" placeholder="No hp" required>
+            <input type="number" class="form-control form-control-user  @error('no_telp') is-invalid @enderror" name="no_telp" placeholder="No hp" required>
+            @error('no_telp')
+            <div class="alert alert-danger mt-2">
+                {{ $message }}
+            </div>
+        @enderror
         </div>
         <div class="form-group">
             <label for="">Gmail*</label>
-            <input type="email" class="form-control form-control-user" name="email" placeholder="Email" required>
+            <input type="email" class="form-control form-control-user  @error('email') is-invalid @enderror" name="email" placeholder="Email" required>
+            @error('email')
+            <div class="alert alert-danger mt-2">
+                {{ $message }}
+            </div>
+        @enderror
         </div>
             </div>
             <div class="form-group-2 mt-3 text-right">

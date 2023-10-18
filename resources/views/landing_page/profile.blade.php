@@ -11,23 +11,26 @@ Author URL: http://w3layouts.com
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Puncak Golf</title>
+    <title>
+      Aquarium - Animals Category Responsive Website Template - Services :
+      W3Layouts
+    </title>
     <!-- google-fonts -->
     <link
-      href="{{asset('')}}//fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
+      href="//fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link
-      href="{{asset('')}}//fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap"
+      href="//fonts.googleapis.com/css2?family=Halant:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
-      href="{{asset('')}}//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <!-- //google-fonts -->
     <!-- Template CSS Style link -->
-    <link rel="stylesheet" href="{{asset('')}}landing_page/assets/css/style-starter.css" />
+    <link rel="stylesheet" href="landing_page/assets/css/style-starter.css" />
   </head>
 
   <body>
@@ -37,70 +40,179 @@ Author URL: http://w3layouts.com
 
     <!-- inner banner -->
 
-    <!-- //inner banner -->
+    <!-- services section -->
+<div class="w3l-grids-block-5 pb-5">
+        <div class="container">
+            <div class="title-main text-center mx-auto mb-4" style="max-width:700px;">
+                <h3 class="title-style">Pilih Paket Golf yang Kamu</h3>
+                <p class="sub-title mt-2">Pilih paket yang kamu inginkan dan nikmati suasana olahraga bersama teman dan keluarga.</p>
+            </div>
+            <div class="row mt-sm-5 pt-lg-2 justify-content-center">
+                @foreach ($paket as $pkt)
 
-    <!-- about section -->
-    <section class="w3l-wecome-content-6">
-		<!-- /content-6-section -->
-		<div class="ab-content-6-mian py-5">
-			<div class="container py-lg-5">
-					<div class="welcome-grids row">
-						<div class="col-lg-6 mb-lg-0 mb-5">
-                            <h3 class="title-style text-center mb-2 pl-4">{{ $pelatih->nama }}</h3>
+                <div class="col-lg-4 col-sm-6  mt-lg-0 mt-4">
+                    <div class=" grids5-info">
+
+                        <a href="#blog">  <img
+                            src="{{url('/admin/paket/' . @$pkt->gambar)}}"
+                            alt="" height="300px" width="250px"
+                            class="radius-image"
+                          /></a>
+                        <div class="blog-info">
+                            <h5>{{ $pkt->created_at->diffForHumans() }}</h5>
+                            <h4><a href="#blog">{{$pkt->nama}}</a></h4>
+                            {!!str_replace("&Amp;Nbsp;", " ",  Str::limit($pkt->deskripsi,51)) !!} <br>
+                            <a class="btn btn-style mt-4" href="{{route('kategori.detail', $pkt->id)}}">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+    {{-- <section class="w3l-services-6 py-5"> --}}
+      {{-- <div class="container py-md-5 py-4">
+        @foreach ($paket as $pk)
+        <div
+          class="title-main text-center mx-auto mb-5 pb-lg-4 pb-2"
+          style="max-width: 700px"
+        >
+          <h3 class="title-style">Kategori Paket</h3>
+        </div>
+        <div class="row text-center mt-5 pt-5">
+          <div class="col-lg-4 col-md-6 grids-feature">
+            <div class="area-box">
+                <img
+                src="{{url('/admin/paket/' . @$pk->gambar)}}"
+                alt="" height="150px" width="300px"
+                class="radius-image"
+              />
+              <h4>
+                <a href="#feature" class="title-head mt-4">{{$pk->nama}}</a>
+              </h4>
+              <b class="mt-3">Lapangan</b>
+              <p >
+                {{$pk->lapangan->nama}} <br>
+                <p >
+                    <b>Jumlah Pemain</b><br>
+                    {{$pk->jumlah_pemain}}<br>
+                </p>
+                <b class="mt-3">Deskripsi Paket</b>
+            </p>
+             {!!str_replace("&Amp;Nbsp;", " ", $pk->deskripsi)!!} <br>
+
+                <b>jam oprasional</b><br>
+                <p>
+
+                    {{\Carbon\Carbon::createFromFormat('H:i:s',$pk->jam_mulai)->format('h:i')}} -
+                    {{\Carbon\Carbon::createFromFormat('H:i:s',$pk->jam_selesai)->format('h:i')}}
+                </p>
+                <b>Harga</b><br>
+                   Rp.{{number_format($pk->harga,0,',','.')}} <br>
+                <br> --}}
 
 
-                                {!!str_replace("&Amp;Nbsp;", " ", $pelatih->deskripsi)!!} <br>
-						</div>
-						<div class="col-lg-5 welcome-image">
-                            <img
-                                src="{{url('/admin/pelatih/' . @$pelatih->gambar)}}"
-                                alt="" height="400px" width="550px"
-                                class="radius-image"
-                              /><br><br>
-						</div>
-					</div>
-			</div>
-		</div>
-		{{-- </div> --}}
-
-	</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- //about section -->
-
-    <!-- team section -->
-
-    <!-- //team section -->
-
-    <!-- skills section -->
-
-    <!-- //skills section -->
-
-    <!-- middle -->
-
-    <!-- //middle -->
-
-    <!-- testimonial section -->
-
-    <!-- //testimonial section -->
+              {{-- </p><br><br> --}}
+              {{-- <a href="#url" class="more btn btn-style mt-4">Read More </a>
+            </div>
+          </div>
+          @endforeach
+        </div>
+      </div>
+    </section>
+    <!-- //bottom-grids-->
 
     <!-- footer -->
+    <section class="footer-17">
+        <div class="footer17-sub pt-5">
+          <div class="container py-md-5 py-4">
+            <!-- <div class="text-center mb-4">
+              <a class="footer-logo" href="index.html">Aquarium</a>
+            </div> -->
+            <!-- <form
+              action="#url"
+              method="GET"
+              class="rightside-form m-auto"
+              style="max-width: 500px"
+            >
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                placeholder="Enter your email"
+              />
+              <button class="btn" type="submit">Subscribe</button>
+            </form> -->
+            <div class="row footer17-top mt-5 pt-md-5 pt-sm-4">
+              <div class="col-md-3 col-6">
+                <div class="footer17-top-left">
+                  <h6>Kontak Kami</h6>
+                  <ul>
+                    <li><a href="contact.html">Jl. Raya Halim Tiga, Halim Perdanakusuma Semarang Utara</a></li>
+                    <li><a href="#work">HP/WA: +62811 988 8801 </a></li>
+                    <li><a href="#aquarium">RSVP: +6221 2936 2015</a></li>
+                    <li><a href="#questions">Email: info@BeruangEmas.com</a></li>
+                    <li><a href="#info">www.royalejakarta.com</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="footer17-top-left">
+                  <h6>Jam Operasional</h6>
+                  <ul>
+                    <li><a href="">Mon-Wed: 6:00am – 8:00pm</a></li>
+                    <li><a href="">Thurs-Fri: 6:30am – 7:30pm</a></li>
+                    <li><a href="">Sat: 7:00am – 9:00pm</a></li>
+                    <li><a href="">Sun: 8:00am – 8:00pm</a></li>
+
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mt-md-0 mt-4">
+                <div class="footer17-top-left">
+                  <h6>Header</h6>
+                  <ul>
+                    <li><a href="/">Beranda</a></li>
+                    <li><a href="/kategori">Kategori</a></li>
+                    <li><a href="/tentangkami">Tentang Kami</a></li>
+                    <li><a href="/Berita">Berita</a></li>
+                    <li><a href="/reservasi">Reservasi</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mt-md-0 mt-4">
+                <div class="footer17-top-left border-0">
+                    <h6>Media Sosial</h6>
+                    <ul>
+                      <li><a href="#url">
+                          <span class="fa fa-facebook-f"></span>
+                      </a></li>
+                      <li><a href="#url">
+                          <span class="fa fa-twitter"></span>
+                      </a></li>
+                      <li><a href="#url">
+                          <span class="fa fa-instagram"></span>
+                      </a></li>
+                      <li><a href="#url"></a></li>
+                      <li><a href="#url"></a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{-- <div class="copyright text-center">
+            <div class="container">
+              <p class="copy-footer-29">
+                © 2021 Aquarium. All rights reserved | Designed by
+                <a href="https://w3layouts.com" target="_blank">W3layouts</a>
+              </p>
+            </div>
+          </div> --}}
+        </div>
+      </section>
+    <!-- //footer -->
+
+
     <section class="footer-17">
         <div class="footer17-sub pt-5">
           <div class="container py-md-5 py-4">
@@ -141,7 +253,6 @@ Author URL: http://w3layouts.com
                     <li><a href="">Senin-Jumat: 07:00 – 16:30</a></li>
                     <li><a href="">Sabtu: 06:30 – 17:00</a></li>
                     <li><a href="">Minggu: 06:00 – 17:00</a></li>
-
                   </ul>
                 </div>
               </div>
@@ -187,7 +298,6 @@ Author URL: http://w3layouts.com
           </div> --}}
         </div>
       </section>
-    <!-- //footer -->
 
     <!-- Js scripts -->
     <!-- move top -->

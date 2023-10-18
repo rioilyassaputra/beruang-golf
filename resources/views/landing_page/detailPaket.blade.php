@@ -11,7 +11,7 @@ Author URL: http://w3layouts.com
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Beruang Emas Golf</title>
+    <title>Puncak Golf</title>
     <!-- google-fonts -->
     <link
       href="{{asset('')}}//fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
@@ -143,10 +143,9 @@ Author URL: http://w3layouts.com
                 <div class="footer17-top-left">
                   <h6>Jam Operasional</h6>
                   <ul>
-                    <li><a href="">Senin-Rabu: 07:00 – 19:30</a></li>
-                    <li><a href="">Kamis-jumat: 06:30 – 20:00</a></li>
-                    <li><a href="">Sabtu: 06:00 – 20:30</a></li>
-                    <li><a href="">Minggu: 06:00 – 21:00</a></li>
+                    <li><a href="">Senin-Jumat: 07:00 – 16:30</a></li>
+                    <li><a href="">Sabtu: 06:30 – 17:00</a></li>
+                    <li><a href="">Minggu: 06:00 – 17:00</a></li>
 
                   </ul>
                 </div>
