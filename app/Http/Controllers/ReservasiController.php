@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App;
+use PDF;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use App\Models\Paket;
-use Barryvdh\DomPDF\PDF;
 use App\Models\Reservasi;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -84,6 +87,15 @@ class ReservasiController extends Controller
     }
     public function update(Request $request, Reservasi $reservasi)
     {
+        $jumlahReservasi = Reservasi::where('id_paket', $request->id_paket)->where('status', 'konfirm')
+            ->whereDate('tanggal', $request->tanggal)
+            ->count();
+
+        // Cek apakah jumlah reservasi melebihi batasan (3 kali)
+        if ($jumlahReservasi >= 3) {
+            // Reservasi melebihi batasan, berikan pesan kesalahan
+            return redirect()->back()->with('error', 'Maaf, paket ini telah dipesan maksimal 3 kali pada tanggal yang sama.');
+        }
 
         $noakhir = Reservasi::max('id');
         $tgl = date('d-m-y');
@@ -168,13 +180,12 @@ class ReservasiController extends Controller
         }
     }
 
-    public function pdf($id)
+    public function pdf()
     {
-        $reservasi = reservasi::find($id);
-
-        $pdf = app('dompdf.wrapper');
-        $pdf->loadview('admin.reservasi.pdf', ['reservasi' => $reservasi])->setOptions(['defaultFont' => 'sans-serif'])->setPaper('a5', 'landscape');
-        $pdfFileName = 'reservasi_' . $reservasi->id . '.pdf';
-        return $pdf->stream($pdfFileName);
+        // $pdf = App::make('dompdf.wrapper');
+        $reservasi = Reservasi::all()->sortByDesc('id')->take('1');
+        // dd($reservasi);
+        $pdf = PDF::loadview('admin.reservasi.pdf', compact('reservasi'))->setOptions(['defaultFont' => 'sans-serif'])->setPaper('a5', 'landscape');
+        return $pdf->download('bukti_pemesanan.pdf');
     }
 }

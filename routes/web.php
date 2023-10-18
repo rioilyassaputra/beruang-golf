@@ -11,6 +11,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\PelatihController;
+use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\LapanganController;
 use App\Http\Controllers\ReservasiController;
 
@@ -50,6 +51,7 @@ Route::get('/Paket/detail/{paket}', function (Paket $paket) {
 Route::get('/Berita/detail/{berita:slug}', function (Berita $berita) {
     return view('landing_page/detailBerita', compact('berita'));
 })->name('Berita.detail');
+Route::post('/Berita/detail/{berita:slug}/komen', [KomentarController::class, 'store'])->name('komentar')->middleware('auth');
 Route::get('/tentangkami', function () {
     $pelatih = Pelatih::latest()->paginate(8);
     return view('landing_page/tentangkami', compact('pelatih'));
@@ -74,6 +76,11 @@ Route::get('/Pelatih/detail/{pelatih}', function (Pelatih $pelatih) {
 Route::get('logoutuser', [AuthController::class, 'logoutuser']);
 Route::post('reservasi/user', [ReservasiController::class, 'reservasiuser'])->name('reservasi.user')->middleware('auth');
 
+Route::get('/riwayat', function () {
+    $riwayat = Reservasi::all()->where('id_user', Auth()->user()->id);
+    return view('landing_page.riwayat', compact('riwayat'));
+})->name('riwayat')->middleware('auth');
+
 
 
 
@@ -93,7 +100,7 @@ Route::get('/dashboard', function () {
     return view('admin/dashboard', compact('pelatih', 'berita', 'paket', 'reservasi'));
 })->name('dashboard')->middleware('admin');
 
-Route::get('PDF{id}', [ReservasiController::class, 'pdf'])->name('pdf');
+Route::get('PDF', [ReservasiController::class, 'pdf'])->name('pdf');
 
 Route::get('admin/login', [AuthController::class, 'index'])->name('admin');
 Route::post('loginproses', [AuthController::class, 'login']);
