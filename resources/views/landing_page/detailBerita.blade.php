@@ -28,6 +28,16 @@ Author URL: http://w3layouts.com
     <!-- //google-fonts -->
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="{{asset('')}}landing_page/assets/css/style-starter.css" />
+
+    <style>.card {
+  border-radius: 12px;
+}
+.card-body {
+  background: #f9fafb;
+  border-radius: 12px;
+}
+</style>
+
   </head>
 
   <body>
@@ -49,8 +59,12 @@ Author URL: http://w3layouts.com
                     </div>
                         <div class="col-lg-12 mb-lg-0 mb-md-5 mb-4 mt-3">
                             <span>{{ $berita->created_at->diffForHumans() }}</span>
-                            <img src="{{url('/admin/berita/' . @$berita->gambar)}}" style="height: 100%; width: 300%" alt=""
-                                class="radius-image-full img-fluid">
+                            <div class="text-center my-4">
+  <img src="{{ url('/admin/berita/' . @$berita->gambar) }}"
+       class="img-fluid rounded shadow-sm"
+       style="max-width: 800px; height: auto; object-fit: cover;">
+</div>
+
                         </div>
                         <div class="col-lg-12 pl-lg-5 "><br><br>
                             <p style="margin-left: -3% " class="mt-3"> {!!str_replace("&Amp;Nbsp;", " ", $berita->Deskripsi)!!} <br></p>
@@ -59,21 +73,51 @@ Author URL: http://w3layouts.com
             </div>
         </div>
     </section>
-    <div class="contact-w3pvt-form mt-5 pt-lg-4">
-        <form
-          method="post"
-          class="w3layouts-contact-fm"
-          action="https://sendmail.w3layouts.com/submitForm"
-        >
-        <div class="form-group">
-          <label for="">Nama Lengkap*</label>
-          <input type="text" class="form-control form-control-user" name="nama" placeholder="Nama" required>
-      </div>
-               <div class="form-group-2 mt-3 text-right">
-            <button type="submit" class="btn btn-style">Kirim</button>
-          </div><br>
+   <!-- Komentar Section -->
+<div class="row justify-content-center mt-5">
+  <div class="col-md-8">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h4 class="mb-4 text-center">💬 Tinggalkan Komentar</h4>
+        <form method="POST" action="{{ route('komentar', $berita->slug) }}">
+          @csrf
+          <div class="form-group mb-3">
+            <label for="komentar">Komentar*</label>
+            <textarea class="form-control" id="komentar" name="pesan" rows="4" placeholder="Tulis komentar Anda..." required></textarea>
+          </div>
+          <div class="text-end">
+            <button type="submit" class="btn btn-primary px-4">Kirim</button>
+          </div>
         </form>
+      </div>
     </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- List Komentar -->
+<div class="row justify-content-center mt-5">
+  <div class="col-md-8">
+    <h4 class="mb-4 text-center">📌 Komentar</h4>
+    @forelse($berita->komentar as $komen)
+      <div class="card mb-3 border-0 shadow-sm">
+        <div class="card-body">
+          <h6 class="fw-bold mb-1">{{ $komen->user->name }}
+            <small class="text-muted"> • {{ $komen->created_at->diffForHumans() }}</small>
+          </h6>
+          <p class="mb-0">{{ $komen->pesan }}</p>
+        </div>
+      </div>
+    @empty
+      <p class="text-muted fst-italic text-center">Belum ada komentar. Jadilah yang pertama!</p>
+    @endforelse
+  </div>
+</div>
+
+
 
 
 

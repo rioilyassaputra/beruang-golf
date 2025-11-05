@@ -12,7 +12,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark stroke">
             <h1><a class="navbar-brand" href="index.html">
                 <img src="{{asset('')}}landing_page/assets/images/lg.png" alt="" style="margin-left: -8%" width="50" height="50">
-                    {{-- SMA<span class="sub-log">Duta</span>Wacana --}}
+
 
                 </a>
                 <h5 class="hny-title" id="cobalogo">PUNCAK GOLF</h5>
@@ -34,14 +34,14 @@
         <a class="nav-link" href="/tentangkami">Tentang Kami</a>
       </li>
       <li class="nav-item {{request()->routeis('kategori') ? 'active' : ''}}">
-        <a class="nav-link" href="/kategori">Kategori</a>
+        <a class="nav-link" href="/kategori">Paket</a>
       </li>
       <li class="nav-item {{request()->routeis('Berita') ? 'active' : ''}}">
         <a class="nav-link" href="/Berita">Berita&Acara</a>
       </li>
-      {{-- <li class="nav-item {{request()->routeis('Reservasi') ? 'active' : ''}}">
+      <li class="nav-item {{request()->routeis('Reservasi') ? 'active' : ''}}">
         <a class="nav-link" href="/Reservasi">Reservasi</a>
-      </li> --}}
+      </li>
       <!-- search button -->
       @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">

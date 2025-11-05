@@ -11,7 +11,7 @@ Author URL: http://w3layouts.com
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Beruang Emas Golf</title>
+    <title>Puncak Golf</title>
     <!-- google-fonts -->
     <link
       href="//fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&display=swap"
@@ -116,8 +116,8 @@ Author URL: http://w3layouts.com
           <div
             class="col-lg-6 about-right-faq align-self position-relative pl-lg-5"
           >
-            <h6 class="left-text-design">Aquarium</h6>
-            <h3 class="title-style mb-2 pl-4">Awesome Aquarium Design</h3>
+            <h6 class="left-text-design">Puncak golf</h6>
+            <h3 class="title-style mb-2 pl-4">Berita dan acara terbaru dari puncak golf</h3>
             <p class="mt-3 pl-4">
               Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
               ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit
@@ -128,7 +128,7 @@ Author URL: http://w3layouts.com
               adipisicing elit. Non quae, fugiat.
             </p>
 
-            >
+
           </div>
         </div>
       </div>

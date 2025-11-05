@@ -285,7 +285,7 @@ Author URL: http://w3layouts.com
 							<h2 class="hny-title">
 								{{$lp->nama}}
 							</h2>
-							 {!!$lp->deskripsi!!}
+							 {!! str_replace('&Nbsp;', ' ', $lp->deskripsi) !!}
 						</div>
 						<div class="col-lg-5 welcome-image">
                             <img

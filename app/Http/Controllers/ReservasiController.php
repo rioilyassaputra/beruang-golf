@@ -32,7 +32,7 @@ class ReservasiController extends Controller
         if ($noakhir < 1) {
             $no_reservasi = 'Puncak Golf' . '/' . '1' . '/' . $tgl;
         } else {
-            $no_reservasi = 'Puncak Golf' . '/' . $noakhir++ . '/' . $tgl;
+            $no_reservasi = 'Puncak Golf' . '/' . ($noakhir + 1) . '/' . $tgl;
         }
         $request->validate([
             'nama' => 'required',
@@ -71,7 +71,6 @@ class ReservasiController extends Controller
             'id_user' => Auth::user()->id,
         ];
         if ($paket) {
-            // Menambahkan harga ke dalam data yang akan disimpan
             $data['harga'] = $paket->harga;
         }
         Reservasi::create($data);
@@ -91,9 +90,7 @@ class ReservasiController extends Controller
             ->whereDate('tanggal', $request->tanggal)
             ->count();
 
-        // Cek apakah jumlah reservasi melebihi batasan (3 kali)
         if ($jumlahReservasi >= 3) {
-            // Reservasi melebihi batasan, berikan pesan kesalahan
             return redirect()->back()->with('error', 'Maaf, paket ini telah dipesan maksimal 3 kali pada tanggal yang sama.');
         }
 

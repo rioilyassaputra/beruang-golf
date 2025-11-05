@@ -85,12 +85,12 @@ Route::get('/riwayat', function () {
 
 
 // backend
-Route::resource('lapangan', LapanganController::class)->middleware('admin');
-Route::resource('pelatih', PelatihController::class)->middleware('admin');
-Route::resource('berita', BeritaController::class)->middleware('admin');
-Route::resource('paket', PaketController::class)->middleware('admin');
-route::put('/reservasi/confirm/{id}', [ReservasiController::class, 'confirm'])->name('reservasi.confirm')->middleware('admin');
-Route::resource('reservasi', ReservasiController::class)->middleware('admin');
+Route::resource('lapangan', LapanganController::class)->middleware('auth','admin');
+Route::resource('pelatih', PelatihController::class)->middleware('auth','admin');
+Route::resource('berita', BeritaController::class)->middleware('auth','admin');
+Route::resource('paket', PaketController::class)->middleware('auth','admin');
+route::put('/reservasi/confirm/{id}', [ReservasiController::class, 'confirm'])->name('reservasi.confirm')->middleware('auth','admin');
+Route::resource('reservasi', ReservasiController::class)->middleware('auth','admin');
 
 Route::get('/dashboard', function () {
     $pelatih = Pelatih::all()->count();
@@ -98,7 +98,7 @@ Route::get('/dashboard', function () {
     $paket = Paket::all()->count();
     $reservasi = Reservasi::all()->count();
     return view('admin/dashboard', compact('pelatih', 'berita', 'paket', 'reservasi'));
-})->name('dashboard')->middleware('admin');
+})->name('dashboard')->middleware('auth','admin');
 
 Route::get('PDF', [ReservasiController::class, 'pdf'])->name('pdf');
 

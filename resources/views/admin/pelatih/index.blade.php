@@ -27,7 +27,7 @@
                                         <td>
                                             {{ $loop->iteration }}
                                         </td>
-                                        <td> <img src="{{ url('/admin/pelatih/' . @$pl->gambar) }}" ></td>
+                                        <td> <img src="{{ url('/admin/pelatih/' . @$pl->gambar) }}" width="250px" height="250px"></td>
                                         <td>{{ $pl->nama }}</td>
                                         <td>{!! $pl->deskripsi !!}</td>
                                         <td>

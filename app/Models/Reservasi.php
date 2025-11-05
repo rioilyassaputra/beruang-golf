@@ -15,4 +15,8 @@ class Reservasi extends Model
     {
         return $this->belongsTo(Paket::class, 'id_paket');
     }
+    public function user()
+{
+    return $this->belongsTo(User::class);
+}
 }

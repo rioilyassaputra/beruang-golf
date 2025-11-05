@@ -7,7 +7,7 @@
                 <h4>Tambah Reservasi</h4>
             </div>
             <div class="card-body p-0">
-                <form action="{{ Request()->routeIs('reservasi.edit') ? route('reservasi.update', $reservasi->id) : route('reservasi.store') }}"
+                <form action="{{ Request()->routeIs('reservasi.edit') ? route('reservasi.update', $reservasi->id) : route('reservasi.user') }}"
                     method="post" enctype="multipart/form-data">
                     @csrf
                     @if (Request()->routeIs('reservasi.edit'))
